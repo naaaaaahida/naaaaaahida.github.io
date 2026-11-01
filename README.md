@@ -56,6 +56,8 @@ You can also open `index.html` directly, although a local server better reflects
 - Education lists the M.Sc. in Information & Communication Technology, B.Sc., and Higher Secondary Certificate from Birshreshtha Munshi Abdur Rouf Public College (August 2017–May 2019). All three institutions are listed in Dhaka, Bangladesh. The master’s is ongoing from January 2025. Entries show only dates, qualifications, institutions, and locations, without descriptions or CGPA.
 - Four individually addressable project pages with context, approach, considerations, and source links.
 - Responsive portrait, navigation, and layouts; CSS illustrations rather than heavy visual libraries.
+- On smartphones, the portrait is the first hero content, followed by the introduction and actions. It is first in the HTML reading order; named CSS grid areas retain the desktop text-left/photo-right layout. The stacked layout also applies to wider touch phones in landscape, with a smaller portrait for short screens.
+- Mobile layouts use larger reading text and touch targets, wrapping actions, responsive image sizes, notch-safe spacing, and a scrollable menu that fits the available viewport. Pinch zoom remains enabled. No JavaScript device detection or separate mobile site is needed.
 - Keyboard focus styles, a skip link, semantic landmarks, reduced-motion support, and print styles.
 - Core content and navigation work without JavaScript. The mobile menu is an enhancement; without JavaScript, navigation remains visible.
 - Email, [LinkedIn](https://www.linkedin.com/in/nahida-zaman-bina-b1549623a/), and GitHub links; no CV view/download controls, contact backend, analytics, cookies, or client-side framework. LinkedIn is also included in the profile’s structured-data `sameAs` list.
@@ -134,6 +136,7 @@ git check-ignore PORTFOLIO_PLAN.md
 Before a release, review the site in a browser:
 
 - Main page and every project page at narrow mobile, tablet, and desktop widths.
+- Portrait-first hero at 320, 360, 390, 430, and 760px widths, plus landscape touch-phone sizes; desktop grid remains text-left/photo-right. Check iPhone safe areas, Android Chrome, dynamic browser toolbars, and 200% zoom.
 - Menu open/close behavior, Escape, keyboard focus, anchor navigation, and browser Back.
 - Email, repository, publication, and next-project links; confirm there are no CV controls.
 - Both themes on every page, theme persistence between pages/reloads, system preference changes before a manual choice, and storage-disabled behavior.
