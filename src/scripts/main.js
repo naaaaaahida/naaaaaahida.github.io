@@ -8,7 +8,7 @@
 
   const toggle = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('.site-nav');
-  const mobileLayout = window.matchMedia('(max-width: 860px)');
+  const mobileLayout = window.matchMedia('(max-width: 1000px)');
 
   if (toggle && navigation) {
     toggle.hidden = false;

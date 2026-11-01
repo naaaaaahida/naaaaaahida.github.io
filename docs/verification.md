@@ -27,15 +27,25 @@ The three Streamlit URLs encountered redirect loops in the noninteractive HTTP c
 - JavaScript syntax checks for `main.js`, `theme.js`, and `effects.js`.
 - Nine HTML pages checked for local links and anchors, unique IDs, one H1/main landmark, skip links, image alternatives/dimensions, valid ARIA targets, and `noopener` on links opening new tabs.
 - The homepage references its branded social image. All seven case studies reference individual 1200 × 630 project social PNGs, with dimensions and descriptive alternative text. The pastel illustrations are conceptual, without invented performance charts or product screenshots.
-- All 24 distinct checked local page/asset routes returned HTTP 200, including WOFF2 fonts and the social preview.
+- The initial project-content update returned HTTP 200 for 24 checked local page/asset routes, including WOFF2 fonts and the social preview.
 - Local font files verified as WOFF2. Five font subsets total **92,768 bytes**. Runtime Google Fonts stylesheets and preconnects were removed; original SIL Open Font Licenses are included with the assets.
 - Menu logic checks covered initial closed/inert state, focus on opening, focus transfer to the selected section, Escape focus restoration, and clearing inert state for desktop navigation.
-- Nine primary text/background pairs checked in each theme: minimum contrast **4.86:1 in light mode** and **7.44:1 in dark mode**. These checks do not replace review of every rendered element.
+- Nine primary text/background pairs checked in each theme: minimum contrast **4.86:1 in light mode** and **7.04:1 in dark mode**. These checks do not replace review of every rendered element.
 - Reduced-motion handling retained. The custom cursor now falls back to the native pointer under forced-colors/high-contrast settings.
 - Portrait-first mobile reading order, existing profile details, custom scroll controls, theme switching, and the absence of CV links were preserved.
 - CSS delimiter checks and `git diff --check` passed.
 
-The project-preview refinement keeps the original Crop and Bangla RAG card compositions. White Board, Service Provider, Coders Live, and Customer Churn now use matching pastel vector illustrations. The actual contract-type chart was moved into the churn case study alongside its confusion matrix, preserving both notebook outputs as evidence. Editable card/share SVGs and PNG share exports are in `assets/projects/previews/`.
+The project-preview refinement keeps the Crop and Bangla RAG leaf/document motifs. All six cards use closely framed illustration scenes with separate light/dark palettes. Mobile cards enlarge the drawings and omit the small concept caption. The actual contract-type chart remains in the churn case study alongside its confusion matrix, preserving both notebook outputs as evidence. Editable card/scene/share SVGs and PNG share exports are in `assets/projects/previews/`.
+
+## Visual refinement
+
+The prior implementation was committed as `48462f0` before these refinements. Her full name now leads the hero, with “Curious mind. Engineer at heart.” as its supporting line. Introductory copy was shortened, body text increased, text measures constrained, and section spacing tightened. The project grid retains six equal entries.
+
+The experience timeline consistently presents employer, role, location, and a one-sentence description, with a separate current-role badge for Unibox IT. Dates, remote/onsite status, education, and the portrait-first mobile reading order are preserved.
+
+A custom “n.” monogram is shared by navigation/footer wordmarks, a theme-aware SVG favicon, a 32px PNG fallback, a 180px Apple touch icon, and the social images. The dark illustration palettes are vector colors rather than image filters. Light/dark image pairs and the favicon were rendered and visually inspected outside the browser. Calculations using the actual heading font's metrics found that the name fits the intended text column at 320, 360, 390, 430, 760, 1100, and 1440px viewport widths; this does not replace browser layout testing.
+
+After refinement, source checks covered all nine pages and 33 referenced local resources, including the new icon and scene files. Navigation logic tests passed at the updated 1000px menu breakpoint. The new scene/icon paths were validated on disk, without a fresh rendered-browser or HTTP audit.
 
 ## Remaining manual checks
 

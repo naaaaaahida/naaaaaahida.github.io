@@ -2,7 +2,7 @@
 
 A personal portfolio for Nahida Zaman Bina, a software engineer with a frontend background and a current remote AI Engineer role at Unibox IT. The website showcases her projects, research, professional experience, and education in a lavender-accented design.
 
-The responsive layout features a portrait-first introduction on smartphones, light and dark themes, a custom desktop cursor, and an interactive top scroll bar. Six featured projects connect her frontend and AI work to repository-backed case studies, with demo links for the frontend projects and an actual notebook figure for churn prediction.
+The responsive layout features a name-led introduction, a portrait-first layout on smartphones, light and dark illustration palettes, a custom desktop cursor, and an interactive top scroll bar. Six featured projects connect her frontend and AI work to repository-backed case studies, with demo links for the frontend projects and an actual notebook figure for churn prediction. A custom “n.” monogram connects the navigation, favicon, and social images.
 
 ## Links
 
