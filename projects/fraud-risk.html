@@ -4,20 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#faf8fc">
-    <meta name="description" content="Investigating fraudulent financial transactions through an analysis and classification workflow, with attention to feature engineering and extreme class imbalance.">
-    <title>Credit Card Fraud &amp; Risk Analysis — Nahida Zaman Bina</title>
+    <meta name="description" content="An interactive transaction dashboard with filters, risk summaries, and category, state, and monthly charts.">
+    <title>Fraud Risk Dashboard — Nahida Zaman Bina</title>
     <link rel="canonical" href="https://naaaaaahida.github.io/projects/fraud-risk.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Credit Card Fraud &amp; Risk Analysis — Nahida Zaman Bina">
-    <meta property="og:description" content="Investigating fraudulent financial transactions through an analysis and classification workflow, with attention to feature engineering and extreme class imbalance.">
+    <meta property="og:title" content="Fraud Risk Dashboard — Nahida Zaman Bina">
+    <meta property="og:description" content="An interactive transaction dashboard with filters, risk summaries, and category, state, and monthly charts.">
     <meta property="og:url" content="https://naaaaaahida.github.io/projects/fraud-risk.html">
-    <meta property="og:image" content="https://naaaaaahida.github.io/assets/images/bina.jpg">
-    <meta property="og:image:alt" content="Nahida Zaman Bina">
+    <meta property="og:image" content="https://naaaaaahida.github.io/assets/projects/previews/fraud-risk-social.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Fraud Risk Dashboard — illustrated project preview by Nahida Zaman Bina">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://naaaaaahida.github.io/assets/projects/previews/fraud-risk-social.png">
     <link rel="icon" href="../assets/branding/favicon.svg" type="image/svg+xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+    <link rel="preload" href="../assets/fonts/instrument-serif-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../src/styles/fonts.css">
     <script src="../src/scripts/theme.js"></script>
     <script src="../src/scripts/effects.js" defer></script>
     <link rel="stylesheet" href="../src/styles/main.css">
@@ -25,69 +27,35 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header detail-header">
-      <div class="container nav-wrap">
-        <a class="wordmark" href="../index.html" aria-label="Nahida, home">nahida<span>.</span></a>
-        <nav class="site-nav" aria-label="Main navigation">
-          <a href="../index.html#about">About</a>
-          <a href="../index.html#work">Selected work</a>
-          <a class="nav-contact" href="../index.html#contact">Let’s connect <span aria-hidden="true">↗</span></a>
-        </nav>
-        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" hidden>
-          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.7 13A8.7 8.7 0 0 1 11 3.3 8.7 8.7 0 1 0 20.7 13Z"/></svg>
-          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg>
-        </button>
-      </div>
-    </header>
+    <header class="site-header detail-header"><div class="container nav-wrap">
+      <a class="wordmark" href="../index.html" aria-label="Nahida, home">nahida<span>.</span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="../index.html#about">About</a><a href="../index.html#work">Selected work</a><a class="nav-contact" href="../index.html#contact">Let’s connect <span aria-hidden="true">↗</span></a></nav>
+      <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" hidden>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.7 13A8.7 8.7 0 0 1 11 3.3 8.7 8.7 0 1 0 20.7 13Z"/></svg>
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg>
+      </button>
+    </div></header>
     <main id="main">
       <section class="detail-hero container" aria-labelledby="project-title">
         <a class="breadcrumb" href="../index.html#work"><span aria-hidden="true">←</span> Back to selected work</a>
-        <p class="eyebrow">PROJECT 02 / MACHINE LEARNING · RISK ANALYSIS</p>
-        <h1 id="project-title">Finding the unusual in the everyday<em>.</em></h1>
-        <p class="detail-lead">Investigating fraudulent financial transactions through an analysis and classification workflow, with attention to feature engineering and extreme class imbalance.</p>
-        <dl class="detail-meta">
-          <div><dt>PROJECT</dt><dd>Credit Card Fraud &amp; Risk Analysis</dd></div>
-          <div><dt>TOOLKIT</dt><dd>Python · XGBoost · Scikit-learn</dd></div>
-        </dl>
+        <p class="eyebrow">ANALYTICS · INTERACTIVE REPORTING</p>
+        <h1 id="project-title">Fraud Risk Dashboard<em>.</em></h1>
+        <p class="detail-lead">An interactive transaction dashboard with filters, risk summaries, and category, state, and monthly charts.</p>
+        <dl class="detail-meta"><div><dt>PROJECT TYPE</dt><dd>Dashboard implementation</dd></div><div><dt>TOOLKIT</dt><dd>Python · Pandas · Streamlit · Plotly</dd></div></dl>
+        <div class="detail-actions"><a class="text-link" href="https://github.com/naaaaaahida/Credit-Card-Fraud-Risk-Analysis" target="_blank" rel="noopener noreferrer">Source code <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
       </section>
       <div class="detail-content container">
-        <section class="detail-section" aria-labelledby="question-title">
-          <h2 id="question-title">The question<em>.</em></h2>
-          <div><p><strong>How do we recognize a rare event in a large number of ordinary transactions?</strong></p><p>Fraud detection is a problem where the less common class matters greatly. This project brings together exploratory analysis and predictive modeling to investigate suspicious transactions and frame model outputs in terms of operational risk.</p></div>
-        </section>
-        <section class="detail-section" aria-labelledby="approach-title">
-          <h2 id="approach-title">The approach<em>.</em></h2>
-          <div><ul>
-              <li>Developed an end-to-end analysis and predictive modeling workflow for financial transaction data.</li>
-              <li>Applied feature engineering and handled extreme class imbalance.</li>
-              <li>Worked with XGBoost and Scikit-learn classifiers and translated model outputs into risk-oriented reporting metrics.</li>
-            </ul></div>
-        </section>
-        <section class="detail-section" aria-labelledby="thinking-title">
-          <h2 id="thinking-title">The thinking<em>.</em></h2>
-          <div><p>An imbalanced problem calls for careful evaluation: overall accuracy alone can obscure performance on the rare class. The interpretation of false positives and missed fraud is central to understanding what a model can usefully contribute.</p></div>
-        </section>
-        <section class="detail-section" aria-labelledby="scope-title">
-          <h2 id="scope-title">Scope & context<em>.</em></h2>
-          <div><p>This project is a modeling and analysis exercise. It is not a live payment-screening service, and its outputs should be understood within the data and evaluation setup of the project.</p></div>
-        </section>
-        <section class="detail-section" aria-labelledby="perspective-title">
-          <h2 id="perspective-title">A wider perspective<em>.</em></h2>
-          <div><p>The uncommon cases deserve careful attention. A risk model becomes easier to assess when the analytical choices and the consequences of errors are made explicit.</p></div>
-        </section>
-        <div class="detail-actions">
-          <a class="button button-primary" href="https://github.com/nahida30/Credit-Card-Fraud-Risk-Analysis" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
-          <a class="text-link" href="mailto:nahidazmn@gmail.com">Let’s talk about it <span aria-hidden="true">↗</span></a>
-        </div>
+        <section class="detail-section" aria-labelledby="question-title"><h2 id="question-title">The question<em>.</em></h2><div><p><strong>How can transaction data be made easier to inspect from several risk perspectives?</strong></p><p>The published app loads transaction records from CSV, cleans text values, parses dates, and presents a Streamlit dashboard with a dark reporting layout.</p></div></section>
+        <section class="detail-section" aria-labelledby="implementation-title"><h2 id="implementation-title">The implementation<em>.</em></h2><div><ul><li>Added sidebar filters for fraud type, state, and merchant.</li>
+<li>Calculated fraud counts, fraud rate, risk summaries, and transaction-volume totals.</li>
+<li>Built category/risk charts and state/month views with Plotly.</li></ul></div></section>
+
+        <section class="detail-section" aria-labelledby="decisions-title"><h2 id="decisions-title">Design decisions<em>.</em></h2><div><p>The dashboard recomputes its summaries from the filtered dataframe, so the same selection drives its KPI cards and charts.</p></div></section>
+        <section class="detail-section" aria-labelledby="scope-title"><h2 id="scope-title">Scope & next steps<em>.</em></h2><div><p>The README describes a Random Forest prediction layer, but the reviewed app.py imports the classifier without implementing training or inference. This case study therefore covers the implemented dashboard, with no predictive model results claimed.</p></div></section>
+        <aside class="source-notes" aria-labelledby="sources-title"><h2 id="sources-title">Explore the source</h2><p>This overview is grounded in the public repository’s implementation and documentation.</p><ul><li><a href="https://github.com/naaaaaahida/Credit-Card-Fraud-Risk-Analysis/blob/main/README.md" target="_blank" rel="noopener noreferrer">README.md<span class="sr-only"> (opens in a new tab)</span></a></li><li><a href="https://github.com/naaaaaahida/Credit-Card-Fraud-Risk-Analysis/blob/main/app.py" target="_blank" rel="noopener noreferrer">app.py<span class="sr-only"> (opens in a new tab)</span></a></li></ul></aside>
       </div>
-      <aside class="next-project" aria-label="Next project">
-        <div class="container"><p class="eyebrow">KEEP EXPLORING / NEXT PROJECT</p><a href="bangla-rag.html">Bringing documents into conversation <span aria-hidden="true">↗</span></a></div>
-      </aside>
+      <aside class="next-project" aria-label="Next project"><div class="container"><p class="eyebrow">KEEP EXPLORING / NEXT PROJECT</p><a href="whiteboard.html">White Board <span aria-hidden="true">↗</span></a></div></aside>
     </main>
-    <footer class="site-footer container">
-      <a class="wordmark" href="../index.html" aria-label="Nahida, home">nahida<span>.</span></a>
-      <p>© <span data-year>2026</span> Nahida Zaman Bina</p>
-      <a class="back-top" href="../index.html#work">All selected work <span aria-hidden="true">↗</span></a>
-    </footer>
+    <footer class="site-footer container"><a class="wordmark" href="../index.html" aria-label="Nahida, home">nahida<span>.</span></a><p>© <span data-year>2026</span> Nahida Zaman Bina</p><a class="back-top" href="../index.html#work">All selected work <span aria-hidden="true">↗</span></a></footer>
   </body>
 </html>

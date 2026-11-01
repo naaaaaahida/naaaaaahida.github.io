@@ -18,6 +18,8 @@
       toggle.setAttribute('aria-expanded', String(open));
       toggle.querySelector('.menu-toggle-label').textContent = open ? 'Close' : 'Menu';
       navigation.classList.toggle('is-open', open);
+      navigation.toggleAttribute('inert', mobileLayout.matches && !open);
+      if (open) navigation.querySelector('a')?.focus();
       if (returnFocus) toggle.focus();
     };
 
@@ -25,7 +27,18 @@
       setMenu(toggle.getAttribute('aria-expanded') !== 'true');
     });
     navigation.addEventListener('click', (event) => {
-      if (event.target.closest('a')) setMenu(false);
+      const link = event.target.closest('a');
+      if (!link) return;
+      const wasOpen = toggle.getAttribute('aria-expanded') === 'true';
+      setMenu(false);
+      // Move focus out of the collapsed menu to the chosen section.
+      if (wasOpen && link.hash) {
+        const destination = document.getElementById(link.hash.slice(1));
+        if (destination) {
+          destination.setAttribute('tabindex', '-1');
+          destination.focus({ preventScroll: true });
+        }
+      }
     });
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
@@ -39,6 +52,7 @@
       if (!event.target.closest('.nav-wrap')) setMenu(false);
     });
     mobileLayout.addEventListener('change', () => setMenu(false));
+    setMenu(false);
   }
 
   const sectionLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];

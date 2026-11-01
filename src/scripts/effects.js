@@ -67,7 +67,7 @@
   updateScroll();
 
   // Only replace an actual mouse pointer on devices suited to this effect.
-  const pointerPreference = window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+  const pointerPreference = window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) and (forced-colors: none)');
   const cursor = document.createElement('div');
   cursor.className = 'custom-cursor';
   cursor.setAttribute('aria-hidden', 'true');

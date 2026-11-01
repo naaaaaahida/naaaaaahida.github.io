@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#faf8fc"/>
+<rect x="28" y="28" width="1144" height="574" rx="26" fill="none" stroke="#d8c9e6"/>
+<circle cx="1050" cy="145" r="178" fill="#eee7f6"/>
+<circle cx="1125" cy="515" r="225" fill="#f0e9f6"/>
+<g fill="none" stroke="#b8a0d8" stroke-width="1.5" transform="translate(1010 294)"><ellipse rx="23" ry="92"/><ellipse rx="23" ry="92" transform="rotate(45)"/><ellipse rx="23" ry="92" transform="rotate(90)"/><ellipse rx="23" ry="92" transform="rotate(135)"/></g>
+<text x="88" y="116" fill="#69458b" font-family="Arial,sans-serif" font-size="17" letter-spacing="4">SOFTWARE ENGINEERING · AI · FRONTEND</text>
+<text x="84" y="270" fill="#302638" font-family="Georgia,serif" font-size="91">Nahida Zaman</text>
+<text x="84" y="375" fill="#69458b" font-family="Georgia,serif" font-size="101" font-style="italic">Bina.</text>
+<text x="88" y="445" fill="#6b6072" font-family="Arial,sans-serif" font-size="25">Curious mind. Engineer at heart.</text>
+<path d="M88 493h340" stroke="#d8c9e6"/>
+<text x="88" y="541" fill="#69458b" font-family="Arial,sans-serif" font-size="20">naaaaaahida.github.io</text>
+<text x="1085" y="548" fill="#69458b" font-family="Arial,sans-serif" font-size="36">↗</text>
+</svg>
