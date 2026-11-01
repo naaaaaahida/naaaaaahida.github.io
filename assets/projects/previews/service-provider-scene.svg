@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="430" height="240" viewBox="110 50 390 210"><ellipse cx="300" cy="153" rx="219" ry="88" fill="none" stroke="#c8b3a6" stroke-width="1" transform="rotate(-11 300 153)"/>
-<g transform="rotate(-5 290 147)"><rect x="138" y="63" width="295" height="174" rx="11" fill="#fbf7f3" stroke="#c8b3a6" stroke-width="1.4"/>
-<path d="M138 87h295" stroke="#c8b3a6"/><circle cx="153" cy="75" r="2.5" fill="#c8b3a6"/><circle cx="163" cy="75" r="2.5" fill="#c8b3a6"/><circle cx="173" cy="75" r="2.5" fill="#c8b3a6"/>
-<path d="M162 115h100m-100 15h73" stroke="#796054" stroke-width="3" stroke-linecap="round"/><rect x="162" y="148" width="57" height="12" rx="6" fill="#decbbb"/>
-<rect x="301" y="106" width="104" height="58" rx="7" fill="#decbbb"/><path d="M320 146v-13m15 13v-22m15 22v-9m15 9v-30m15 30v-20" stroke="#796054" stroke-width="3" stroke-linecap="round"/>
-<rect x="161" y="180" width="70" height="36" rx="5" fill="none" stroke="#c8b3a6"/><rect x="247" y="180" width="70" height="36" rx="5" fill="none" stroke="#c8b3a6"/><rect x="333" y="180" width="70" height="36" rx="5" fill="none" stroke="#c8b3a6"/></g>
-<rect x="391" y="198" width="87" height="34" rx="17" fill="#fbf7f3" stroke="#c8b3a6"/><text x="434.5" y="219" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="14" fill="#796054">Connected.</text></svg>

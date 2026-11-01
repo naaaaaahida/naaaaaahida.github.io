@@ -2,18 +2,9 @@
 (() => {
   'use strict';
 
-  const storageKey = 'nahida-theme';
   const systemPreference = window.matchMedia('(prefers-color-scheme: dark)');
   const root = document.documentElement;
   let preference = null;
-
-  const validTheme = (value) => value === 'light' || value === 'dark';
-  try {
-    const saved = window.localStorage.getItem(storageKey);
-    if (validTheme(saved)) preference = saved;
-  } catch {
-    // Storage can be disabled. Theme switching still works for this page.
-  }
 
   const applyTheme = () => {
     const theme = preference || (systemPreference.matches ? 'dark' : 'light');
@@ -36,11 +27,7 @@
       button.hidden = false;
       button.addEventListener('click', () => {
         preference = root.dataset.theme === 'dark' ? 'light' : 'dark';
-        try {
-          window.localStorage.setItem(storageKey, preference);
-        } catch {
-          // Keep the in-memory choice when persistence is unavailable.
-        }
+        // Manual switching lasts for this page; new pages follow the device.
         applyTheme();
       });
     });
@@ -48,12 +35,7 @@
   });
 
   systemPreference.addEventListener('change', () => {
-    if (!preference) applyTheme();
-  });
-
-  window.addEventListener('storage', (event) => {
-    if (event.key !== storageKey && event.key !== null) return;
-    preference = validTheme(event.newValue) ? event.newValue : null;
+    preference = null;
     applyTheme();
   });
 })();

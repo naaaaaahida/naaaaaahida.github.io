@@ -65,9 +65,9 @@ window.portfolioTranslations = {
     "Vivo a Dhaka",
     "Basée à Dhaka"
   ],
-  "Precrastinating": [
-    "Precrastinatrice",
-    "Précrastinatrice"
+  "Local time": [
+    "Ora locale",
+    "Heure locale"
   ],
   "01 / A LITTLE ABOUT ME": [
     "01 / QUALCOSA SU DI ME",
@@ -157,25 +157,9 @@ window.portfolioTranslations = {
     "Leggi il caso di studio",
     "Lire l’étude de cas"
   ],
-  "COMPONENTS": [
-    "COMPONENTI",
-    "COMPOSANTS"
-  ],
   "CONNECTION": [
     "CONNESSIONE",
     "CONNEXION"
-  ],
-  "FRONTEND · REACT & TYPESCRIPT": [
-    "FRONTEND · REACT E TYPESCRIPT",
-    "FRONTEND · REACT ET TYPESCRIPT"
-  ],
-  "Service Provider Website": [
-    "Sito di servizi",
-    "Site de services"
-  ],
-  "A component-based digital-services website, with a separate sales and revenue visualisation page.": [
-    "Un sito di servizi digitali basato su componenti, con una pagina separata per visualizzare vendite e ricavi.",
-    "Un site de services numériques construit à partir de composants, avec une page distincte de visualisation des ventes et des revenus."
   ],
   "CURIOSITY": [
     "CURIOSITÀ",
@@ -244,18 +228,6 @@ window.portfolioTranslations = {
   "A seven-input crop recommendation interface, with supporting soil-health and Power BI artefacts.": [
     "Un’interfaccia che consiglia colture a partire da sette dati, con materiali sulla salute del suolo e report Power BI.",
     "Une interface de recommandation de cultures à partir de sept données, avec des ressources sur la santé des sols et des éléments Power BI."
-  ],
-  "More to explore": [
-    "Altro da scoprire",
-    "À découvrir également"
-  ],
-  "Fraud Risk Dashboard": [
-    "Dashboard del rischio di frode",
-    "Tableau de bord du risque de fraude"
-  ],
-  "React video interface · desktop practice": [
-    "Interfaccia video React · esercizio desktop",
-    "Interface vidéo React · exercice pour ordinateur"
   ],
   "Curiosity doesn’t end here.": [
     "La curiosità non finisce qui.",
@@ -393,9 +365,9 @@ window.portfolioTranslations = {
     "il futuro.",
     "la suite."
   ],
-  "JAN 2025 — PRESENT": [
-    "GEN 2025 — OGGI",
-    "JANV. 2025 — AUJOURD’HUI"
+  "ONGOING": [
+    "IN CORSO",
+    "EN COURS"
   ],
   "M.Sc. in Information & Communication Technology": [
     "M.Sc. in Tecnologie dell’informazione e della comunicazione",
@@ -532,10 +504,6 @@ window.portfolioTranslations = {
   "Project tools": [
     "Strumenti del progetto",
     "Outils du projet"
-  ],
-  "Nahida, back to top": [
-    "Nahida, torna in alto",
-    "Nahida, retour en haut"
   ],
   "love": [
     "amore",
@@ -733,78 +701,6 @@ window.portfolioTranslations = {
     "Il notebook salvato riporta un’accuratezza del 76,79% sul set di test. È un risultato registrato nel repository, non un benchmark riprodotto in modo indipendente. La matrice di confusione mostra anche casi di abbandono non rilevati: l’accuratezza da sola non misura completamente l’utilità per la fidelizzazione.",
     "Le notebook enregistré indique une exactitude de 76,79 % sur son jeu de test. Il s’agit d’un résultat consigné dans le dépôt, et non d’un benchmark reproduit indépendamment. La matrice de confusion montre aussi des départs non détectés ; l’exactitude seule ne mesure pas toute l’utilité pour la fidélisation."
   ],
-  "ANALYTICS · INTERACTIVE REPORTING": [
-    "ANALISI · REPORT INTERATTIVI",
-    "ANALYSE · RAPPORTS INTERACTIFS"
-  ],
-  "An interactive transaction dashboard with filters, risk summaries, and category, state, and monthly charts.": [
-    "Una dashboard interattiva delle transazioni con filtri, riepiloghi dei rischi e grafici per categoria, stato e mese.",
-    "Un tableau de bord interactif des transactions avec filtres, synthèses des risques et graphiques par catégorie, État et mois."
-  ],
-  "Dashboard implementation": [
-    "Implementazione della dashboard",
-    "Réalisation du tableau de bord"
-  ],
-  "How can transaction data be made easier to inspect from several risk perspectives?": [
-    "Come rendere più semplice esaminare i dati delle transazioni da diverse prospettive di rischio?",
-    "Comment faciliter l’examen des données de transaction sous différents angles de risque ?"
-  ],
-  "The published app loads transaction records from CSV, cleans text values, parses dates, and presents a Streamlit dashboard with a dark reporting layout.": [
-    "L’app pubblicata carica le transazioni da CSV, pulisce i valori testuali, interpreta le date e presenta una dashboard Streamlit con un layout scuro.",
-    "L’application publiée charge les transactions depuis un CSV, nettoie les valeurs textuelles, analyse les dates et présente un tableau de bord Streamlit au thème sombre."
-  ],
-  "Added sidebar filters for fraud type, state, and merchant.": [
-    "Aggiunta di filtri laterali per tipo di frode, stato e commerciante.",
-    "Ajout de filtres latéraux par type de fraude, État et commerçant."
-  ],
-  "Calculated fraud counts, fraud rate, risk summaries, and transaction-volume totals.": [
-    "Calcolo del numero e del tasso di frodi, dei riepiloghi dei rischi e dei totali dei volumi di transazione.",
-    "Calcul du nombre et du taux de fraudes, des synthèses de risques et des volumes totaux de transactions."
-  ],
-  "Built category/risk charts and state/month views with Plotly.": [
-    "Creazione di grafici per categoria e rischio e di viste per stato e mese con Plotly.",
-    "Création de graphiques par catégorie et risque, et de vues par État et mois avec Plotly."
-  ],
-  "The dashboard recomputes its summaries from the filtered dataframe, so the same selection drives its KPI cards and charts.": [
-    "La dashboard ricalcola i riepiloghi dal dataframe filtrato: la stessa selezione alimenta quindi le schede KPI e i grafici.",
-    "Le tableau de bord recalcule ses synthèses à partir du dataframe filtré ; la même sélection alimente ainsi ses cartes d’indicateurs et ses graphiques."
-  ],
-  "The README describes a Random Forest prediction layer, but the reviewed app.py imports the classifier without implementing training or inference. This case study therefore covers the implemented dashboard, with no predictive model results claimed.": [
-    "Il README descrive un livello predittivo Random Forest, ma il file app.py esaminato importa il classificatore senza implementare addestramento o inferenza. Il caso di studio riguarda quindi la dashboard realizzata e non dichiara risultati di modelli predittivi.",
-    "Le README décrit une couche de prédiction Random Forest, mais le fichier app.py examiné importe le classifieur sans réaliser l’entraînement ni l’inférence. Cette étude de cas porte donc sur le tableau de bord réalisé, sans revendiquer de résultats prédictifs."
-  ],
-  "Frontend prototype": [
-    "Prototipo frontend",
-    "Prototype frontend"
-  ],
-  "How do reusable components connect a marketing website with a data-oriented view?": [
-    "Come collegano i componenti riutilizzabili un sito promozionale a una vista orientata ai dati?",
-    "Comment des composants réutilisables relient-ils un site de présentation à une vue orientée données ?"
-  ],
-  "The home page assembles separate Hero, Services, Products, and Work components. The project also includes a /service route that reads local JSON and passes monthly sales and revenue values into a chart component.": [
-    "La pagina iniziale assembla componenti separati Hero, Services, Products e Work. Il progetto include anche una route /service che legge dati JSON locali e passa vendite e ricavi mensili a un componente grafico.",
-    "La page d’accueil assemble des composants distincts Hero, Services, Products et Work. Le projet comprend aussi une route /service qui lit un JSON local et transmet les ventes et revenus mensuels à un composant graphique."
-  ],
-  "Composed the home page from dedicated React components rather than one large page file.": [
-    "Composizione della pagina iniziale con componenti React dedicati anziché un unico grande file.",
-    "Composition de la page d’accueil à partir de composants React dédiés plutôt que d’un seul grand fichier."
-  ],
-  "Used TypeScript and Next.js routes to separate the marketing surface from the chart page.": [
-    "Uso di TypeScript e delle route Next.js per separare il sito promozionale dalla pagina dei grafici.",
-    "Utilisation de TypeScript et des routes Next.js pour séparer la partie présentation de la page des graphiques."
-  ],
-  "Added a sales/revenue visualisation backed by a local JSON data source, alongside service and product presentations.": [
-    "Aggiunta di una visualizzazione di vendite e ricavi basata su dati JSON locali, accanto alle presentazioni di servizi e prodotti.",
-    "Ajout d’une visualisation des ventes et des revenus alimentée par un JSON local, aux côtés des présentations de services et de produits."
-  ],
-  "The component boundaries follow the page’s distinct content areas. The chart route makes a useful distinction between presenting services and exploring structured information.": [
-    "I confini dei componenti seguono le diverse aree di contenuto della pagina. La route dei grafici distingue utilmente la presentazione dei servizi dall’esplorazione delle informazioni strutturate.",
-    "Les composants suivent les différentes zones de contenu de la page. La route des graphiques distingue utilement la présentation des services de l’exploration des informations structurées."
-  ],
-  "This is presented as a frontend prototype. The chart uses local data, and marketing text is example content; it does not establish a client relationship, production analytics service, or working contact backend.": [
-    "Si tratta di un prototipo frontend. Il grafico usa dati locali e i testi promozionali sono esempi: non attestano un rapporto con un cliente, un servizio di analisi in produzione o un backend di contatto funzionante.",
-    "Il s’agit d’un prototype frontend. Le graphique utilise des données locales et les textes de présentation sont des exemples ; ils ne prouvent ni relation client, ni service d’analyse en production, ni backend de contact fonctionnel."
-  ],
   "Interactive browser project": [
     "Progetto interattivo nel browser",
     "Projet interactif dans le navigateur"
@@ -893,10 +789,6 @@ window.portfolioTranslations = {
     "Matrice di confusione XGBoost salvata: 847 clienti rimasti e 235 clienti persi previsti correttamente, 188 falsi allarmi e 139 casi di abbandono non rilevati.",
     "Matrice de confusion XGBoost enregistrée : 847 clients restés et 235 clients partis correctement prédits, 188 fausses alertes et 139 départs non détectés."
   ],
-  "Page not found": [
-    "Pagina non trovata",
-    "Page introuvable"
-  ],
   "Nahida Zaman Bina — Software & AI Engineer": [
     "Nahida Zaman Bina — Ingegnera del software e dell’IA",
     "Nahida Zaman Bina — Ingénieure logiciel et IA"
@@ -916,22 +808,6 @@ window.portfolioTranslations = {
   "Training a BERT-style masked language model from a custom configuration, with Bangla text cleaning, WordPiece tokenisation, and Hugging Face Trainer.": [
     "Addestramento di un modello linguistico mascherato in stile BERT da una configurazione personalizzata, con pulizia del testo bengalese, tokenizzazione WordPiece e Hugging Face Trainer.",
     "Entraînement d’un modèle de langage masqué de type BERT à partir d’une configuration personnalisée, avec nettoyage du texte bengali, tokenisation WordPiece et Hugging Face Trainer."
-  ],
-  "Fraud Risk Dashboard — Nahida Zaman Bina": [
-    "Dashboard del rischio di frode — Nahida Zaman Bina",
-    "Tableau de bord du risque de fraude — Nahida Zaman Bina"
-  ],
-  "Fraud Risk Dashboard — illustrated project preview by Nahida Zaman Bina": [
-    "Dashboard del rischio di frode — anteprima illustrata del progetto di Nahida Zaman Bina",
-    "Tableau de bord du risque de fraude — aperçu illustré du projet de Nahida Zaman Bina"
-  ],
-  "Service Provider Website — Nahida Zaman Bina": [
-    "Sito di servizi — Nahida Zaman Bina",
-    "Site de services — Nahida Zaman Bina"
-  ],
-  "Service Provider Website — illustrated project preview by Nahida Zaman Bina": [
-    "Sito di servizi — anteprima illustrata del progetto di Nahida Zaman Bina",
-    "Site de services — aperçu illustré du projet de Nahida Zaman Bina"
   ],
   "Coders Live — Nahida Zaman Bina": [
     "Coders Live — Nahida Zaman Bina",
@@ -976,5 +852,9 @@ window.portfolioTranslations = {
   "Page not found — Nahida Zaman Bina": [
     "Pagina non trovata — Nahida Zaman Bina",
     "Page introuvable — Nahida Zaman Bina"
+  ],
+  "FEATURED PROJECT": [
+    "PROGETTO IN EVIDENZA",
+    "PROJET À LA UNE"
   ]
 };

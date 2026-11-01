@@ -7,6 +7,48 @@
     element.textContent = String(new Date().getFullYear());
   });
 
+  const dhakaTime = document.querySelector('[data-dhaka-time]');
+  if (dhakaTime) {
+    let formatter;
+    let clockLanguage;
+    let clockTimer = null;
+    const renderClock = () => {
+      const now = new Date();
+      const parts = Object.fromEntries(formatter.formatToParts(now).map((part) => [part.type, part.value]));
+      const value = clockLanguage === 'en-GB'
+        ? `${parts.hour}:${parts.minute} ${parts.dayPeriod.toUpperCase()}`
+        : `${parts.hour}${clockLanguage === 'fr' ? 'h' : ':'}${parts.minute}`;
+      if (dhakaTime.textContent !== value) dhakaTime.textContent = value;
+      dhakaTime.setAttribute('datetime', now.toISOString());
+    };
+    const updateClockLanguage = () => {
+      clockLanguage = window.portfolioI18n?.getLanguage() || 'en-GB';
+      formatter = new Intl.DateTimeFormat(clockLanguage, {
+        timeZone: 'Asia/Dhaka', minute: '2-digit',
+        hour: clockLanguage === 'en-GB' ? 'numeric' : '2-digit',
+        hourCycle: clockLanguage === 'en-GB' ? 'h12' : 'h23',
+      });
+      renderClock();
+    };
+    const stopClock = () => {
+      if (clockTimer !== null) window.clearInterval(clockTimer);
+      clockTimer = null;
+    };
+    const startClock = () => {
+      stopClock();
+      // Read the actual time after sleep/backgrounding instead of incrementing a counter.
+      renderClock();
+      if (!document.hidden) clockTimer = window.setInterval(renderClock, 1000);
+    };
+    updateClockLanguage();
+    dhakaTime.closest('.dhaka-clock').hidden = false;
+    startClock();
+    document.addEventListener('portfolio:language', updateClockLanguage);
+    document.addEventListener('visibilitychange', startClock);
+    window.addEventListener('pageshow', startClock);
+    window.addEventListener('pagehide', stopClock);
+  }
+
   // A single greeting on each document load; the accessible name stays Bina.
   const lastName = document.querySelector('.hero-last-name');
   const extraLetters = lastName?.querySelector('.name-extra');
