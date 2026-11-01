@@ -45,7 +45,8 @@
     meter.hidden = maxScroll <= 0;
     meter.style.setProperty('--scroll-progress', String(percent / 100));
     scrollControl.value = String(percent);
-    scrollControl.setAttribute('aria-valuetext', `${Math.round(percent)}% of page`);
+    const percentLabel = window.portfolioI18n?.t('{percent}% of page', { percent: Math.round(percent) }) || `${Math.round(percent)}% of page`;
+    scrollControl.setAttribute('aria-valuetext', percentLabel);
   };
   const scheduleScroll = () => {
     if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateScroll);
@@ -61,6 +62,7 @@
   window.addEventListener('scroll', scheduleScroll, { passive: true });
   window.addEventListener('resize', refreshScroll, { passive: true });
   window.addEventListener('pageshow', refreshScroll);
+  document.addEventListener('portfolio:language', scheduleScroll);
   window.addEventListener('load', refreshScroll);
   if ('ResizeObserver' in window) new ResizeObserver(refreshScroll).observe(document.body);
   if (document.fonts) document.fonts.ready.then(refreshScroll);

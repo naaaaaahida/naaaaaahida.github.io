@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -24,27 +24,29 @@
     <link rel="stylesheet" href="../src/styles/fonts.css">
     <script src="../src/scripts/theme.js"></script>
     <script src="../src/scripts/effects.js" defer></script>
+    <script src="../src/scripts/translations.js" defer></script>
+    <script src="../src/scripts/i18n.js" defer></script>
     <link rel="stylesheet" href="../src/styles/main.css">
     <script src="../src/scripts/main.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header detail-header"><div class="container nav-wrap">
-      <a class="wordmark" href="../index.html" aria-label="Nahida, home"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="1" y="1" width="62" height="62" rx="18" fill="var(--tint)"/><path d="M18 44V23m0 10c0-8 5-12 10-12s10 4 10 12v11" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="47" cy="44" r="3" fill="currentColor"/></svg><span class="wordmark-name">nahida<span class="wordmark-dot">.</span></span></a>
-      <nav class="site-nav" aria-label="Main navigation"><a href="../index.html#about">About</a><a href="../index.html#work">Selected work</a><a class="nav-contact" href="../index.html#contact">Let’s connect <span aria-hidden="true">↗</span></a></nav>
-      <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" hidden>
+      <a class="wordmark" href="../index.html" aria-label="Nahida, home"><span class="wordmark-name">nahida<span class="wordmark-dot">.</span></span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="../index.html#about">About</a><a href="../index.html#work">Selected work</a></nav>
+      <div class="header-actions"><button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" hidden>
         <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.7 13A8.7 8.7 0 0 1 11 3.3 8.7 8.7 0 1 0 20.7 13Z"/></svg>
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg>
-      </button>
+      </button><div class="language-control" hidden><button class="language-toggle" type="button" aria-label="Change language" aria-expanded="false" aria-controls="language-options" title="Change language"><img data-language-current src="../assets/icons/flag-gb.svg" alt="" width="28" height="28"><span class="sr-only" data-language-name>English</span></button><div class="language-options" id="language-options" role="group" aria-label="Choose language" hidden><button class="language-option" type="button" data-language="en-GB" aria-pressed="true"><img src="../assets/icons/flag-gb.svg" alt="" width="32" height="32"><span lang="en-GB">English</span></button><button class="language-option" type="button" data-language="it" aria-pressed="false"><img src="../assets/icons/flag-it.svg" alt="" width="32" height="32"><span lang="it">Italiano</span></button><button class="language-option" type="button" data-language="fr" aria-pressed="false"><img src="../assets/icons/flag-fr.svg" alt="" width="32" height="32"><span lang="fr">Français</span></button></div></div></div>
     </div></header>
     <main id="main">
       <section class="detail-hero container" aria-labelledby="project-title">
-        <a class="breadcrumb" href="../index.html#work"><span aria-hidden="true">←</span> Back to selected work</a>
+        <a class="breadcrumb" href="../index.html#work"><span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m6-6-6 6 6 6"/></svg></span> Back to selected work</a>
         <p class="eyebrow">AI · DOCUMENT RETRIEVAL</p>
         <h1 id="project-title">Bangla PDF RAG<em>.</em></h1>
         <p class="detail-lead">OCR, multilingual embeddings, and retrieval-assisted answers for questions about Bangla PDFs.</p>
         <dl class="detail-meta"><div><dt>PROJECT TYPE</dt><dd>Local AI application</dd></div><div><dt>TOOLKIT</dt><dd>Python · Streamlit · Tesseract · LangChain · FAISS</dd></div></dl>
-        <div class="detail-actions"><a class="text-link" href="https://github.com/naaaaaahida/bangla-rag" target="_blank" rel="noopener noreferrer">Source code <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
+        <div class="detail-actions"><a class="text-link" href="https://github.com/naaaaaahida/bangla-rag" target="_blank" rel="noopener noreferrer">Source code <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span><span class="sr-only"> (opens in a new tab)</span></a></div>
       </section>
       <div class="detail-content container">
         <section class="detail-section" aria-labelledby="question-title"><h2 id="question-title">The question<em>.</em></h2><div><p><strong>How can the information inside a scanned Bangla document become easier to ask questions about?</strong></p><p>The Streamlit app accepts a PDF, converts its pages to images, and uses Tesseract’s Bengali OCR to extract text. It then connects document retrieval with language generation.</p></div></section>
@@ -56,8 +58,8 @@
         <section class="detail-section" aria-labelledby="scope-title"><h2 id="scope-title">Scope & next steps<em>.</em></h2><div><p>Retrieval and prompting do not guarantee factual answers. OCR quality, chunk selection, document length, and the absence of source citations limit the current application. The repository’s Windows-oriented OCR/Poppler paths also need local configuration.</p></div></section>
         <aside class="source-notes" aria-labelledby="sources-title"><h2 id="sources-title">Explore the source</h2><p>This overview is grounded in the public repository’s implementation and documentation.</p><ul><li><a href="https://github.com/naaaaaahida/bangla-rag/blob/main/README.md" target="_blank" rel="noopener noreferrer">README.md<span class="sr-only"> (opens in a new tab)</span></a></li><li><a href="https://github.com/naaaaaahida/bangla-rag/blob/main/app.py" target="_blank" rel="noopener noreferrer">app.py<span class="sr-only"> (opens in a new tab)</span></a></li><li><a href="https://github.com/naaaaaahida/bangla-rag/blob/main/requirements.txt" target="_blank" rel="noopener noreferrer">requirements.txt<span class="sr-only"> (opens in a new tab)</span></a></li></ul></aside>
       </div>
-      <aside class="next-project" aria-label="Next project"><div class="container"><p class="eyebrow">KEEP EXPLORING / NEXT PROJECT</p><a href="customer-churn.html">Customer Churn Prediction <span aria-hidden="true">↗</span></a></div></aside>
+      <aside class="next-project" aria-label="Next project"><div class="container"><p class="eyebrow">KEEP EXPLORING / NEXT PROJECT</p><a href="customer-churn.html">Customer Churn Prediction <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></div></aside>
     </main>
-    <footer class="site-footer container"><a class="wordmark" href="../index.html" aria-label="Nahida, home"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="1" y="1" width="62" height="62" rx="18" fill="var(--tint)"/><path d="M18 44V23m0 10c0-8 5-12 10-12s10 4 10 12v11" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="47" cy="44" r="3" fill="currentColor"/></svg><span class="wordmark-name">nahida<span class="wordmark-dot">.</span></span></a><p>© <span data-year>2026</span> Nahida Zaman Bina</p><a class="back-top" href="../index.html#work">All selected work <span aria-hidden="true">↗</span></a></footer>
+    <footer class="site-footer container"><a class="wordmark" href="../index.html" aria-label="Nahida, home"><span class="wordmark-name">nahida<span class="wordmark-dot">.</span></span></a><div class="footer-meta"><p>Copyright <span data-year>2026</span> Nahida Zaman Bina</p><p class="footer-credit">Built with <span class="credit-heart" aria-label="love">♡</span> by <a href="https://zunaaaaayed.github.io" target="_blank" rel="noopener noreferrer">husband<span class="sr-only"> (opens in a new tab)</span></a></p></div><a class="back-top" href="../index.html#work">All selected work <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></footer>
   </body>
 </html>

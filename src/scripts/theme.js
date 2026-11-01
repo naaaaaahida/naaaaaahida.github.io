@@ -22,12 +22,14 @@
     if (meta) meta.setAttribute('content', theme === 'dark' ? '#1b1522' : '#faf8fc');
     document.querySelectorAll('.theme-toggle').forEach((button) => {
       button.setAttribute('aria-pressed', String(theme === 'dark'));
-      button.setAttribute('aria-label', 'Dark mode');
-      button.setAttribute('title', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      const t = (key) => window.portfolioI18n?.t(key) || key;
+      button.setAttribute('aria-label', t('Dark mode'));
+      button.setAttribute('title', t(theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'));
     });
   };
 
   applyTheme();
+  document.addEventListener('portfolio:language', applyTheme);
 
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.theme-toggle').forEach((button) => {

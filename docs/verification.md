@@ -47,6 +47,97 @@ A custom “n.” monogram is shared by navigation/footer wordmarks, a theme-awa
 
 After refinement, source checks covered all nine pages and 33 referenced local resources, including the new icon and scene files. Navigation logic tests passed at the updated 1000px menu breakpoint. The new scene/icon paths were validated on disk, without a fresh rendered-browser or HTTP audit.
 
+## Portrait accessories and readable labels
+
+The visual-refinement version was committed as `bf01147` before these changes. The portrait note is now a fabric-style hang tag with an eyelet, thread loop, weave texture, and stitched border. It follows the photo mount in normal layout flow, rather than sitting over the subject's body. The atom motif was replaced with line-drawn spectacles on the portrait and homepage share image.
+
+The location line uses 16px text at every breakpoint. Informative rem-based labels have a 13px minimum; the fabric tag's first line is 14px and its italic line is 18–19px. The label/background contrast checks passed in both themes. The garment tag and its exact browser appearance still need the manual layout review described below.
+
+All decorative and action glyphs were replaced with CSS geometry or SVG paths. A source scan of HTML, JavaScript, CSS, and SVG files found no Unicode emoji/pictographic text characters. Copy-email success feedback is plain text. Nine-page structure/link checks, script syntax checks, CSS structure checks, and `git diff --check` passed.
+
+## Floating portrait composition
+
+The offset outline was removed from the portrait. The photo now has a padded, softly rounded frame and a soft shadow. The fabric tag remains below the photo; spectacles, a ribbon bow, an outlined heart, and a botanical sprig surround the frame. All artwork is decorative SVG. Independent transform-only animations are enabled only when reduced motion is not requested, with smaller accessories at the mobile breakpoint. The portrait-first mobile reading order is preserved.
+
+Monogram SVGs were removed from all nine pages' navigation and footer areas; the text home links remain. Favicon and share-image branding are unchanged. Source checks passed for IDs, headings, local resources, CSS structure, script syntax, portrait ordering, monogram removal, and the absence of emoji. The updated floating composition has not been inspected in a rendered browser.
+
+## Dimensional charms, portrait seal, and name greeting
+
+Six SVG ornaments plus the spectacles now use shaded gradients, highlights, and layered shadows. A pearl, flower, and faceted gold charm join the bow, heart, and botanical sprig. Their mobile sizes remain bounded around the portrait. The former caption is a raised circular seal over the lower photo, with the same wording around its rim.
+
+On each document load, the visible surname expands from Bina to Binaaaaaa and contracts once. Extra letters are removed after completion or cancellation; a screen-reader-only final surname remains stable throughout. The animation waits for fonts, fits the available heading width, and is skipped for reduced motion or unavailable Web Animations support. Temporary runtime checks passed for one-shot behavior, cleanup, cancellation, narrow-heading fitting, and pages without the surname. HTML references/IDs, CSS structure, and script syntax checks passed. The mobile detail-page text home link also remains visible after monogram removal.
+
+These changes have not received rendered-browser visual review.
+
+## Bottom-center stamp and personal footer credit
+
+The circular seal was replaced with a transparent, double-bordered ink-style stamp centered over the lower portrait. Lipstick, a compact, a notebook, a pencil, and a tulip join the existing floating ornaments. The eleven decorative charms and spectacles keep their dimensional shading, independent motion, and mobile sizing; reduced-motion handling is unchanged.
+
+All nine pages now include “Built with ♡ by husband” in their footer. The husband link targets https://zunaaaaayed.github.io in a new tab with noopener/noreferrer and a screen-reader hint. Footer text uses 14px sizing. The outlined heart is explicitly requested for this credit.
+
+Nine-page structure/reference checks, footer URL/target checks, stamp placement, decorative SVG checks, CSS structure, script syntax, one-shot name animation checks, and git diff whitespace checks passed. Exact stamp placement and ornament spacing still require rendered-browser review.
+
+## Imperfect circle and orbiting ornaments
+
+The stamp was removed. The portrait uses a square aspect ratio with asymmetric elliptical corner radii for an imperfect circular frame. A shaded perfume bottle replaces the pencil. Twelve evenly phased orbit carriers take the decorative SVGs around the portrait once every 90 seconds; inner carriers counter-rotate to keep each object upright, and the individual bobbing animations remain independent. The fabric note stays readable beneath the composition. Reduced motion disables orbiting and bobbing while retaining evenly distributed static positions.
+
+Source checks passed for all nine pages' IDs/local references, stamp/pencil removal, replacement artwork, twelve carrier phases, CSS structure, and script syntax. A numerical full-route check confirmed equal angular spacing and cancelling carrier rotations. This verifies the animation geometry, not rendered mobile spacing; browser visual review remains pending.
+
+## Orbit decoration visibility fix
+
+The global `img, svg { max-width: 100%; }` rule constrained decorative SVGs to their zero-width orbit anchors. The portrait accessory selector now explicitly sets `max-width: none`, preserving each object's declared desktop/mobile dimensions.
+
+A local-file preview in native Chrome was visually inspected after the fix. The desktop dark-theme portrait displayed all twelve ornaments around the imperfect circular frame, including spectacles, makeup, flowers, notebook, perfume bottle, and pearl. This is a desktop visual check; mobile, light-theme, reduced-motion, and full accessibility/performance audits remain outstanding.
+
+## Flat, stationary-position decorations and attached tag
+
+The shaded accessories were redrawn as single-color SVG outlines. Gradients, highlights, ornament shadows, orbit wrappers, and rotation animations were removed. The twelve objects now have fixed, spaced positions outside the portrait and only bob vertically. The photo and tag share one gently floating mount; the tag sits 18px below the frame and its centered thread overlaps the frame edge so it stays attached throughout motion.
+
+The updated desktop dark-theme composition was visually checked in Chrome after reloading from disk: flat artwork, separated placement, and the centered connected tag were visible. Source checks passed for all twelve outline SVGs, removed orbit/shadow styles, tag structure, CSS structure, and all nine pages' IDs/local references. Mobile and light-theme visual checks remain outstanding.
+
+## Droplet frame, revised flowers, and adaptive name length
+
+The focus strip and its three topics were removed, together with their unused styles. A rose, cosmos, and lavender stem replace the previous floral artwork, and a flat line-drawn pen joins the decorations. The tag thread now runs from the lower frame to an eyelet near the tag's upper-left corner.
+
+The portrait border continuously morphs through four asymmetric circular shapes over 14 seconds; the image inherits the changing radius. Reduced-motion settings keep the frame static. The surname greeting now measures the loaded font and the first-name line to choose the number of added a's, without reducing its font size. It contracts once, removes the extra characters, and cancels safely on resize or a motion-preference change.
+
+Desktop Chrome visual inspection confirmed the revised frame, flowers, pen, and corner attachment. Temporary runtime checks passed for the adaptive name width on wide/narrow layouts, increased letter count, one-shot behavior, reduced motion, cleanup, and resize cancellation. Nine-page references/IDs, CSS structure, script syntax, and whitespace checks passed. Mobile/light-theme visual review remains outstanding.
+
+## Spectacles, diamond ring, and full-height landing
+
+The overlapping lavender/cosmos cluster was removed, and the spectacles were moved into that lower-side space. A matching flat diamond-ring drawing now occupies the spectacles' former upper position. The remaining rose is separate from the replaced cluster.
+
+The hero now has a viewport-based minimum height that subtracts the sticky header and safe-area inset, with a vh fallback and dynamic-viewport sizing. Old fixed/minimum-height breakpoint overrides were removed so the next section stays below the initial viewport while content may grow naturally on short or mobile screens.
+
+Nine-page structure/local-reference checks, removal/replacement checks, CSS structure, breakpoint source checks, and whitespace checks passed.
+A fresh Chrome preview visibly showed the ring above the frame, spectacles in the former flower-cluster area, and no lighter next-section strip at the bottom of the initial viewport.
+
+## Balanced ornaments and literary introduction
+
+The pen moved to the right, with more vertical spacing between the heart and spectacles. Lipstick, rose, and star positions were spread out on the left. The professional summary in the hero was replaced with the requested two-line quotation and a J. R. R. Tolkien attribution, using semantic figure/blockquote/figcaption markup and a citation URL.
+
+Quote/attribution, local references, IDs, CSS structure, and whitespace checks passed. The current native Chrome reload stalled on a blank content area, so this latest composition did not receive a completed rendered visual review.
+
+## Tag wording and faster frame motion
+
+“Curious mind. Engineer at heart.” now appears only on the fabric tag; the duplicate line beneath the name and the old tag wording were removed. The continuous droplet morph now takes 5 seconds instead of 14, with reduced-motion handling retained. Source and whitespace checks passed.
+
+## Distinct project preview palettes
+
+Every project's preview now has a separate palette: White Board lavender, Service Provider sand, Coders Live blue, Bangla PDF RAG sea glass, Customer Churn rose, Crop Recommendation sage, and Fraud Risk honey. The changed projects' card SVGs, light/dark scene SVGs, social SVGs, and 1200×630 social PNGs were updated together, along with homepage card colors in both themes.
+
+All seven social previews were visually inspected together as a contact sheet. Checks confirmed unique social background colors, valid SVG variants, correct PNG sizes, and text contrast of at least 4.5:1 for social-image labels and the changed light/dark card labels. CSS structure and whitespace checks passed.
+
+## British English, Italian, and French
+
+The navigation contact button was removed from the homepage and project pages. All nine pages now have a circular language control beside the theme toggle, showing the selected UK/Italian/French SVG flag and opening three labelled choices. The compact menu supports keyboard focus, Escape, outside-click dismissal, and pressed-state indication.
+
+The shared catalogue contains 244 translated phrases covering homepage and case-study prose, the 404 page, navigation, dates/roles, metadata, image descriptions, footer, menu/copy feedback, theme labels, and scroll-control labels. Original names, institutions, publication titles, source filenames, code/tool names, and source-project artwork remain original. British English is the static no-JavaScript default (`en-GB`); prose and preview captions now use British spellings, and the churn social PNG was regenerated accordingly. README wording was updated.
+
+Language choice persists in local storage and language-qualified internal links, with a URL query overriding storage and working when storage is blocked. Translation updates text nodes in place, preserving icons, links, animations, and event handlers. Source titles and metadata also change with the language. English, Italian, and French switching was exercised in native Chrome, including the circular flag menu, Italian case-study navigation, translated accessibility labels, and return to English.
+
+Temporary runtime checks passed for reversible translations, dynamic feedback, proper-name/whitespace preservation, saved/URL preferences, blocked storage, internal-link query/hash preservation, cross-tab updates, invalid-language handling, and percentage labels. All nine pages passed locale-control/script-order checks, local-resource/anchor checks, metadata-translation coverage, British-English prose checks, SVG/CSS validation, script syntax checks, and whitespace checks. The adaptive surname greeting check still passes. No full mobile-device or screen-reader audit is claimed.
+
 ## Remaining manual checks
 
 Browser control timed out in this session. No Safari/Chrome rendered-layout review, real-phone testing, screen-reader walkthrough, automated browser accessibility scan, or Lighthouse score is claimed.

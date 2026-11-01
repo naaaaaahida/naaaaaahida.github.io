@@ -1,10 +1,56 @@
 /* Progressive enhancements. Navigation, content, and project links work without JS. */
 (() => {
   'use strict';
+  const t = (key) => window.portfolioI18n?.t(key) || key;
 
   document.querySelectorAll('[data-year]').forEach((element) => {
     element.textContent = String(new Date().getFullYear());
   });
+
+  // A single greeting on each document load; the accessible name stays Bina.
+  const lastName = document.querySelector('.hero-last-name');
+  const extraLetters = lastName?.querySelector('.name-extra');
+  const nameMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const greet = async () => {
+    if (!extraLetters || nameMotion.matches || !extraLetters.animate) return;
+    if (document.fonts) await document.fonts.ready;
+    if (nameMotion.matches) return;
+
+    extraLetters.hidden = false;
+    const title = lastName.closest('h1');
+    const firstName = title.querySelector('.hero-name-first');
+    const targetWidth = Math.min(firstName.getBoundingClientRect().width, title.clientWidth - 8);
+    const baseWidth = lastName.getBoundingClientRect().width;
+    // Measure the loaded font and add as many a's as fit beneath the first line.
+    extraLetters.textContent = 'a';
+    extraLetters.style.width = 'auto';
+    const letterWidth = extraLetters.getBoundingClientRect().width;
+    const count = letterWidth > 0 ? Math.max(0, Math.min(40, Math.floor((targetWidth - baseWidth) / letterWidth))) : 0;
+    if (!count) {
+      extraLetters.remove();
+      return;
+    }
+    extraLetters.textContent = 'a'.repeat(count);
+    const width = `${extraLetters.getBoundingClientRect().width}px`;
+    extraLetters.style.removeProperty('width');
+    const animation = extraLetters.animate([
+      { width: '0px', offset: 0 },
+      { width, offset: .35 },
+      { width, offset: .55 },
+      { width: '0px', offset: 1 },
+    ], { duration: 2700, delay: 700, easing: 'cubic-bezier(.4, 0, .2, 1)', iterations: 1 });
+    const stop = () => animation.cancel();
+    nameMotion.addEventListener('change', stop);
+    window.addEventListener('resize', stop, { once: true });
+    const settle = () => {
+      extraLetters.remove();
+      nameMotion.removeEventListener('change', stop);
+      window.removeEventListener('resize', stop);
+    };
+    animation.finished.then(settle, settle);
+  };
+  if (document.readyState === 'complete') greet();
+  else window.addEventListener('load', greet, { once: true });
 
   const toggle = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('.site-nav');
@@ -16,7 +62,7 @@
 
     const setMenu = (open, returnFocus = false) => {
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.querySelector('.menu-toggle-label').textContent = open ? 'Close' : 'Menu';
+      toggle.querySelector('.menu-toggle-label').textContent = t(open ? 'Close' : 'Menu');
       navigation.classList.toggle('is-open', open);
       navigation.toggleAttribute('inert', mobileLayout.matches && !open);
       if (open) navigation.querySelector('a')?.focus();
@@ -77,11 +123,11 @@
     copyButton.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText('nahidazmn@gmail.com');
-        copyStatus.textContent = 'Email address copied to clipboard.';
-        copyButton.textContent = 'Email copied ✓';
+        copyStatus.textContent = t('Email address copied to clipboard.');
+        copyButton.textContent = t('Email copied');
       } catch {
-        copyStatus.textContent = 'Could not copy. You can select the email address above.';
-        copyButton.textContent = 'Copy unavailable';
+        copyStatus.textContent = t('Could not copy. You can select the email address above.');
+        copyButton.textContent = t('Copy unavailable');
       }
     });
   }
