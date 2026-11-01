@@ -1,6 +1,6 @@
 # Nahida Zaman Bina · Personal portfolio
 
-A lavender-accented portfolio for **Nahida Zaman Bina**, a freelance Software Engineer specializing in frontend development. Built with semantic HTML, responsive CSS, and a small amount of vanilla JavaScript, for hosting on GitHub Pages.
+A lavender-accented portfolio for **Nahida Zaman Bina**, a software engineer with a frontend background, currently working remotely as an AI Engineer at Unibox IT (Venice, Italy). Built with semantic HTML, responsive CSS, and a small amount of vanilla JavaScript, for hosting on GitHub Pages.
 
 **Intended URL:** <https://naaaaaahida.github.io/>
 
@@ -31,7 +31,8 @@ You can also open `index.html` directly, although a local server better reflects
 │   ├── styles/main.css             # Tokens, components, layouts, breakpoints, print
 │   └── scripts/
 │       ├── main.js                 # Menu, section indicator, copy email, year
-│       └── theme.js                # Early theme initialization and theme controls
+│       ├── theme.js                # Early theme initialization and theme controls
+│       └── effects.js              # Responsive cursor and top scroll control
 ├── assets/
 │   ├── branding/favicon.svg        # Small lavender wordmark icon
 │   ├── documents/
@@ -48,15 +49,20 @@ You can also open `index.html` directly, although a local server better reflects
 
 ## Design and behavior
 
-- Light mode pairs warm ivory and deep plum; dark mode pairs aubergine surfaces with pale lavender accents. Both use an editorial serif/sans pairing.
+- Light mode pairs warm ivory and deep plum; dark mode pairs aubergine surfaces with pale lavender accents. Both use an editorial serif/sans pairing, solid surfaces, and understated dividers. The design has no glassmorphism, translucent panels, backdrop blur, or decorative glow backgrounds.
 - About comes immediately after the hero and focus strip, followed by selected engineering explorations, research, experience, education, toolkit, and contact.
-- Profile, hero, metadata, and contact copy reflect freelance frontend engineering. The education entries are M.Sc. in Information, Communication & Technology and B.Sc. in Computer Science & Engineering.
+- The profile, hero introduction, about section, and metadata reflect her current AI Engineer role and frontend background. The personal hero introduction is “Curious mind. Engineer at heart.”
+- Experience and Education have their own sections and navigation links. Experience lists the current remote AI Engineer role at Unibox IT (Venice, Italy), Senior Software Engineer at Charm Limited (March 2024–April 2025), and Junior Software Engineer at Revenco (December 2023–March 2024). All experience entries share one paragraph style, with a concise one-sentence description. Unibox summarizes multimodal pipeline optimization and cross-team collaboration; Charm describes leadership of several software projects and engineering teams. Charm and Revenco are marked onsite in Dhaka, Bangladesh.
+- Education lists the M.Sc. in Information & Communication Technology, B.Sc., and Higher Secondary Certificate from Birshreshtha Munshi Abdur Rouf Public College (August 2017–May 2019). All three institutions are listed in Dhaka, Bangladesh. The master’s is ongoing from January 2025. Entries show only dates, qualifications, institutions, and locations, without descriptions or CGPA.
 - Four individually addressable project pages with context, approach, considerations, and source links.
 - Responsive portrait, navigation, and layouts; CSS illustrations rather than heavy visual libraries.
 - Keyboard focus styles, a skip link, semantic landmarks, reduced-motion support, and print styles.
 - Core content and navigation work without JavaScript. The mobile menu is an enhancement; without JavaScript, navigation remains visible.
-- Email and GitHub links; no CV view/download controls, contact backend, analytics, cookies, or client-side framework.
+- Email, [LinkedIn](https://www.linkedin.com/in/nahida-zaman-bina-b1549623a/), and GitHub links; no CV view/download controls, contact backend, analytics, cookies, or client-side framework. LinkedIn is also included in the profile’s structured-data `sameAs` list.
 - A theme toggle on every page follows the visitor’s system preference initially, then remembers an explicit light/dark choice in `localStorage` under `nahida-theme`. It synchronizes across tabs; if storage is unavailable, toggling still works for the current page.
+- A lavender dot and following ring replace the mouse cursor on fine-pointer, hover-capable devices. Links and buttons expand the ring; pressing contracts it. Touch, pen, reduced motion, keyboard use, and native form/media controls retain the native pointer. The animation stops once the ring settles.
+- A fixed horizontal bar at the top shows vertical page progress and doubles as a native range control: click, drag, or use touch to scrub through the page; focus it and use the arrow keys, Home, or End for keyboard scrolling. It updates after viewport/content changes and is hidden on pages that do not scroll. Both enhancements share the theme palette, disappear for print, and are absent when JavaScript is disabled.
+- The native page scrollbar is hidden. Wheel, touch, keyboard, and the top scroll control remain usable. Anchor navigation uses native smooth scrolling, with reduced-motion preferences respected. Scrolling is never intercepted by wheel/touch handlers; progress updates are batched with animation frames, document height is cached until resizing, and the top fill animates with a transform. The header uses an opaque surface without blur at every screen size.
 
 Fonts are **Instrument Serif** and **DM Sans**, requested from Google Fonts with `display=swap`. Network access is required for the web fonts; readable system serif/sans fallbacks are provided. All other site resources are served locally. Consider self-hosting licensed font files if eliminating third-party requests is important.
 
@@ -84,6 +90,8 @@ The main-page artwork is explicitly labeled as conceptual illustration. It does 
 ### Portrait and CV
 
 The original supplied photo is preserved at `assets/images/bina.png`. The website loads JPEG derivatives to reduce the image transfer from about 1.1 MB to about 178 KB at full size or 57 KB at the smaller size. Replace the derivatives and update the dimensions/`srcset` if the photo changes.
+
+The portrait disables native image dragging, image selection, supported mobile image callouts, and the context menu within its frame. These measures discourage casual saving; they cannot prevent downloading or screenshots of a public image. Image files remain accessible to browser tools and through their public URLs. Other page context menus, selection, and keyboard shortcuts are unaffected.
 
 The supplied PDF is retained in `assets/documents/` as source material. It is not linked anywhere in the website, and there are no CV view or download controls. Since this folder is part of the repository, the PDF remains directly addressable if the repository root is published.
 
@@ -118,6 +126,7 @@ JavaScript syntax can be checked with Node.js if available:
 ```sh
 node --check src/scripts/main.js
 node --check src/scripts/theme.js
+node --check src/scripts/effects.js
 git diff --check
 git check-ignore PORTFOLIO_PLAN.md
 ```
@@ -128,6 +137,9 @@ Before a release, review the site in a browser:
 - Menu open/close behavior, Escape, keyboard focus, anchor navigation, and browser Back.
 - Email, repository, publication, and next-project links; confirm there are no CV controls.
 - Both themes on every page, theme persistence between pages/reloads, system preference changes before a manual choice, and storage-disabled behavior.
+- Cursor tracking, link/button hover, press feedback, native controls, leaving/re-entering the page, touch, keyboard use, and reduced-motion fallback.
+- Top scroll position at the start/middle/end, dragging and keyboard controls, content resizing, and pages with no scrollable content.
+- Hidden native scrollbar with wheel, touch, keyboard, and anchor scrolling intact; portrait context-menu/drag restrictions scoped to the image frame.
 - Copy email success/failure, where the browser exposes clipboard access.
 - Reduced motion, 200% zoom, no-JavaScript fallback, and print layout.
 - Missing assets, horizontal overflow, browser console errors, and slow-network loading.
@@ -136,8 +148,8 @@ Browser visual review and Lighthouse have not been completed in the development 
 
 ## Content provenance and review
 
-Her frontend specialization, current freelance work, and degree titles follow the owner’s corrections. Prior experience, research, and project content are based on the supplied CV. Existing ML/NLP projects are presented as broader engineering explorations; no frontend client projects, frameworks, accuracy, business impact, or production deployment metrics have been invented. The four project repository links come from the CV; repository contents were not independently audited during implementation.
+Her frontend specialization, employment timeline, and education details follow the owner’s corrections. Other experience, research, and project content are based on the supplied CV. Existing ML/NLP projects are presented as broader engineering explorations; no frontend client projects, frameworks, accuracy, business impact, or production deployment metrics have been invented. The four project repository links come from the CV; repository contents were not independently audited during implementation.
 
 Publication: [Palm Leaf Health Management: A Hybrid Approach for Automated Disease Detection and Therapy Enhancement](https://doi.org/10.1109/ACCESS.2024.3351912), IEEE Access, volume 12, pages 9097–9111 (2024). The DOI and citation were cross-checked against the [DBLP record](https://dblp.org/rec/journals/access/NobelIBKSAM24).
 
-Before launch, confirm the current master's status, preferred contact details, and the exact BanglaBERT training approach. The site uses “from December 2024” for postgraduate study and neutral language-modeling wording so it does not assert an unverified graduation date or resolve the CV’s conflicting training descriptions by assumption. The freelance role is labeled “Present” without inventing a start date.
+Before launch, confirm preferred contact details and the exact BanglaBERT training approach. The master’s is listed as January 2025–Present following the owner’s update. Neutral language-modeling wording avoids resolving the CV’s conflicting training descriptions by assumption. The Unibox IT role is labeled “Present” without inventing a start date.
