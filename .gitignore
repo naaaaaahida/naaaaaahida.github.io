@@ -1,0 +1,23 @@
+# Local planning and operating system files
+PORTFOLIO_PLAN.md
+.DS_Store
+Thumbs.db
+
+# Editor-local files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Temporary output and local tooling
+node_modules/
+.cache/
+coverage/
+playwright-report/
+test-results/
+*.log
+tmp/
+.env
+.env.*
+!.env.example

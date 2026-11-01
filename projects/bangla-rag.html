@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#faf8fc">
+    <meta name="description" content="Connecting document retrieval with language generation in a pipeline for querying Bangla PDFs through natural-language questions.">
+    <title>Bangla PDF Retrieval-Augmented Generation — Nahida Zaman Bina</title>
+    <link rel="canonical" href="https://naaaaaahida.github.io/projects/bangla-rag.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Bangla PDF Retrieval-Augmented Generation — Nahida Zaman Bina">
+    <meta property="og:description" content="Connecting document retrieval with language generation in a pipeline for querying Bangla PDFs through natural-language questions.">
+    <meta property="og:url" content="https://naaaaaahida.github.io/projects/bangla-rag.html">
+    <meta property="og:image" content="https://naaaaaahida.github.io/assets/images/bina.jpg">
+    <meta property="og:image:alt" content="Nahida Zaman Bina">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="../assets/branding/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+    <script src="../src/scripts/theme.js"></script>
+    <script src="../src/scripts/effects.js" defer></script>
+    <link rel="stylesheet" href="../src/styles/main.css">
+    <script src="../src/scripts/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header detail-header">
+      <div class="container nav-wrap">
+        <a class="wordmark" href="../index.html" aria-label="Nahida, home">nahida<span>.</span></a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#work">Selected work</a>
+          <a class="nav-contact" href="../index.html#contact">Let’s connect <span aria-hidden="true">↗</span></a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" hidden>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.7 13A8.7 8.7 0 0 1 11 3.3 8.7 8.7 0 1 0 20.7 13Z"/></svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg>
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <section class="detail-hero container" aria-labelledby="project-title">
+        <a class="breadcrumb" href="../index.html#work"><span aria-hidden="true">←</span> Back to selected work</a>
+        <p class="eyebrow">PROJECT 03 / BANGLA · NATURAL LANGUAGE PROCESSING</p>
+        <h1 id="project-title">Bringing documents into conversation<em>.</em></h1>
+        <p class="detail-lead">Connecting document retrieval with language generation in a pipeline for querying Bangla PDFs through natural-language questions.</p>
+        <dl class="detail-meta">
+          <div><dt>PROJECT</dt><dd>Bangla PDF Retrieval-Augmented Generation</dd></div>
+          <div><dt>TOOLKIT</dt><dd>Python · LangChain · FAISS · Groq API</dd></div>
+        </dl>
+      </section>
+      <div class="detail-content container">
+        <section class="detail-section" aria-labelledby="question-title">
+          <h2 id="question-title">The question<em>.</em></h2>
+          <div><p><strong>How can the information inside a Bangla document become easier to ask questions about?</strong></p><p>Documents contain useful knowledge, but navigating them can be cumbersome. This project explores a retrieval-augmented generation workflow: retrieving relevant document material and making it available to a language model for answering questions.</p></div>
+        </section>
+        <section class="detail-section" aria-labelledby="approach-title">
+          <h2 id="approach-title">The approach<em>.</em></h2>
+          <div><ul>
+              <li>Designed an end-to-end RAG pipeline for automated document querying.</li>
+              <li>Used LangChain to connect the retrieval and generation workflow.</li>
+              <li>Worked with FAISS vector search and Groq language model APIs.</li>
+            </ul></div>
+        </section>
+        <section class="detail-section" aria-labelledby="thinking-title">
+          <h2 id="thinking-title">The thinking<em>.</em></h2>
+          <div><p>Retrieval and generation solve different parts of the problem. Relevant document material can support an answer, but it does not guarantee that the answer is complete or correct. The quality of text extraction and retrieved context remains important, especially for Bangla documents.</p></div>
+        </section>
+        <section class="detail-section" aria-labelledby="scope-title">
+          <h2 id="scope-title">Scope & context<em>.</em></h2>
+          <div><p>This is a document-querying project, separate from the Bangla next-word prediction research listed on the main page. It is presented here as a project overview rather than an interactive hosted demo.</p></div>
+        </section>
+        <section class="detail-section" aria-labelledby="perspective-title">
+          <h2 id="perspective-title">A wider perspective<em>.</em></h2>
+          <div><p>Language technology is most useful when it meets people where their information already lives. For this project, that starting point is the Bangla document.</p></div>
+        </section>
+        <div class="detail-actions">
+          <a class="button button-primary" href="https://github.com/nahida30/bangla-rag" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+          <a class="text-link" href="mailto:nahidazmn@gmail.com">Let’s talk about it <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <aside class="next-project" aria-label="Next project">
+        <div class="container"><p class="eyebrow">KEEP EXPLORING / NEXT PROJECT</p><a href="crop-recommendation.html">Where data meets the soil <span aria-hidden="true">↗</span></a></div>
+      </aside>
+    </main>
+    <footer class="site-footer container">
+      <a class="wordmark" href="../index.html" aria-label="Nahida, home">nahida<span>.</span></a>
+      <p>© <span data-year>2026</span> Nahida Zaman Bina</p>
+      <a class="back-top" href="../index.html#work">All selected work <span aria-hidden="true">↗</span></a>
+    </footer>
+  </body>
+</html>
