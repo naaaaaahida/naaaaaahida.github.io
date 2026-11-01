@@ -105,11 +105,12 @@
   window.portfolioI18n = { t, getLanguage: () => language, setLanguage: (next) => applyLanguage(next, true) };
   if (control) {
     control.hidden = false;
-    trigger.addEventListener('click', () => {
+    trigger.addEventListener('click', (event) => {
       const opening = options.hidden;
       options.hidden = !opening;
       trigger.setAttribute('aria-expanded', String(opening));
-      if (opening) options.querySelector(`[data-language="${language}"]`).focus();
+      // Keyboard users enter the choices; touch users keep their natural focus.
+      if (opening && event.detail === 0) options.querySelector(`[data-language="${language}"]`).focus();
     });
     options.addEventListener('click', (event) => {
       const button = event.target.closest('[data-language]');
@@ -121,7 +122,11 @@
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && !options.hidden) { closeOptions(true); event.stopPropagation(); }
     });
-    control.addEventListener('focusout', (event) => { if (!control.contains(event.relatedTarget)) closeOptions(); });
+    control.addEventListener('focusout', (event) => {
+      // Touch can blur a button without providing a new focus target before click.
+      // Outside clicks still dismiss the menu; only confirmed focus departures do so here.
+      if (event.relatedTarget && !control.contains(event.relatedTarget)) closeOptions();
+    });
   }
   window.addEventListener('storage', (event) => {
     if (event.key === storageKey) applyLanguage(normalise(event.newValue) || 'en-GB');

@@ -113,6 +113,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .language-options { position: absolute; top: calc(100% + 12px); right: 0; z-index: 40; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 238px; padding: 12px; border: 1px solid var(--control-line); border-radius: 12px; background: var(--page); box-shadow: 0 10px 24px rgb(35 20 49 / 12%); }
 .language-option { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 70px; padding: 7px 2px; border: 0; border-radius: 7px; background: transparent; color: var(--muted); font-size: .8125rem; }
 .language-option:hover { background: var(--tint); }
+.language-toggle, .language-option { touch-action: manipulation; }
 .language-option[aria-pressed='true'] { color: var(--purple); }
 .language-option[aria-pressed='true'] img { outline: 2px solid var(--purple); outline-offset: 3px; }
 
@@ -324,7 +325,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .contact-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 27px; margin-top: 22px; }
 .contact-links .text-link { font-size: .8125rem; border: 0; background: transparent; padding: 8px 0; }
 .site-footer { display: flex; justify-content: space-between; align-items: center; min-height: 100px; gap: 20px; }
-.site-footer .wordmark { font-size: 2rem; }
+
 .site-footer p { font-size: .875rem; color: var(--muted); }
 .footer-meta { display: grid; gap: 5px; padding-block: 20px; text-align: center; }
 .footer-credit { display: flex; justify-content: center; align-items: baseline; gap: .3em; flex-wrap: wrap; }
@@ -496,8 +497,9 @@ ul { margin: 0; padding: 0; list-style: none; }
   .footer-meta { order: 3; width: 100%; padding-block: 0; }
   .site-footer p { text-align: center; font-size: .875rem; }
   .footer-credit a { display: inline-flex; align-items: center; min-height: 44px; }
-  .footer-credit { align-items: center; }
-  .site-footer .wordmark { font-size: 1.8rem; }
+  .footer-credit { align-items: center; width: 100%; }
+  .site-footer .back-top { margin-inline: auto; }
+
   .detail-header .nav-wrap { flex-wrap: nowrap; gap: 12px; }
   .detail-header .site-nav { width: auto; padding-bottom: 0; gap: 16px; }
   .detail-header .site-nav { display: none; }
