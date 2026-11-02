@@ -15,6 +15,8 @@ Third-party materials retain their own licences.
 /* British English source phrases with Italian and French translations.
  * Proper names, source filenames, publication titles and tool names stay original. */
 window.portfolioTranslations = {
+  'Based in': ['Vivo a', 'Basée à'],
+  Dhaka: ['Dacca', 'Dacca'],
   'All rights reserved': ['Tutti i diritti riservati', 'Tous droits réservés'],
   'Source code': ['Codice sorgente', 'Code source'],
   'Skip to content': ['Vai al contenuto', 'Aller au contenu'],
@@ -25,8 +27,6 @@ window.portfolioTranslations = {
   Education: ['Formazione', 'Formation'],
   Menu: ['Menu', 'Menu'],
   Close: ['Chiudi', 'Fermer'],
-  'Curious mind.': ['Una mente curiosa.', 'Un esprit curieux.'],
-  'Engineer at heart.': ['Ingegnere nel cuore.', 'Ingénieure dans l’âme.'],
   'SOFTWARE ENGINEER · AI & FRONTEND': [
     'INGEGNERA DEL SOFTWARE · IA E FRONTEND',
     'INGÉNIEURE LOGICIEL · IA ET FRONTEND',
