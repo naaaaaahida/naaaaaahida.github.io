@@ -17,7 +17,7 @@ Applies to the whole repository. This file is named `AGENT.md` as requested; too
 - Keep Coders Live as the standout project. Do not invent achievements, employment dates, qualifications, metrics, or project outcomes.
 - British English is the source language; maintain Italian and French catalogue entries when changing translatable copy. Preserve proper names and original publication titles.
 - Preserve the mobile language menu, URL/stored language selection, and `portfolio:language` event integrations.
-- Themes default to calculated daylight at the browser time-zone city, without geolocation or network lookup; unavailable coordinates fall back to device preference. Manual toggles affect the current page only.
+- Themes default to calculated daylight at the browser time-zone city, without geolocation or network lookup; unavailable coordinates fall back to device preference. Manual choices take priority for ten minutes from the latest toggle, persist across pages/reloads when storage is available, and automatically expire back to the default.
 - The Dhaka clock uses `Asia/Dhaka`, no seconds: English `8:48 PM`, French `20h48`, Italian `20:48`.
 - Portrait download deterrents are limited browser behaviour; never claim a public image cannot be saved.
 

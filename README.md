@@ -48,7 +48,7 @@ Formatting is optional development tooling; the website still runs directly with
 
 The default theme is light between approximate sunrise and sunset at the representative city for the viewer’s browser time zone, and dark at night. Calculations run locally using bundled public-domain IANA time-zone coordinates and NOAA solar equations. No geolocation prompt, IP lookup, or external location request is used. This approximates a time-zone city, not the viewer’s exact position; weather, terrain, and atmospheric variations are not modelled.
 
-The theme refreshes every 30 seconds while visible and immediately when returning to the page. Manual switching lasts for the current page. Unknown or unavailable time-zone coordinates fall back to the device’s light/dark preference. Polar day/night follows the calculated solar position.
+The theme refreshes every 30 seconds while visible and immediately when returning to the page. Manual choices take priority and are saved across pages and reloads for ten minutes from the latest toggle, then expire automatically. When storage is blocked, that temporary choice remains in memory for the current page. Unknown or unavailable time-zone coordinates fall back to the device’s light/dark preference. Polar day/night follows the calculated solar position.
 
 ## Branding assets
 

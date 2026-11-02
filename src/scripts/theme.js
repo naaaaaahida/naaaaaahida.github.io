@@ -18,8 +18,42 @@ Third-party materials retain their own licences.
 
   const systemPreference = window.matchMedia('(prefers-color-scheme: dark)');
   const root = document.documentElement;
+  const storageKey = 'nahida-theme-override';
+  const overrideDuration = 10 * 60 * 1000;
   let preference = null;
   let timer;
+  let storageAvailable = true;
+
+  const readPreference = () => {
+    if (!storageAvailable) return preference;
+    try {
+      const raw = window.localStorage.getItem(storageKey);
+      if (!raw) return null;
+      let saved;
+      try {
+        saved = JSON.parse(raw);
+      } catch {
+        window.localStorage.removeItem(storageKey);
+        return null;
+      }
+      if (
+        saved &&
+        (saved.theme === 'light' || saved.theme === 'dark') &&
+        Number.isFinite(saved.expiresAt) &&
+        saved.expiresAt > Date.now() &&
+        saved.expiresAt <= Date.now() + overrideDuration
+      )
+        return { theme: saved.theme, expiresAt: saved.expiresAt };
+      window.localStorage.removeItem(storageKey);
+    } catch {
+      // Private browsing or blocked storage still permits an in-memory override.
+      storageAvailable = false;
+      return preference;
+    }
+    return null;
+  };
+
+  preference = readPreference();
 
   // NOAA fractional-year solar equations, evaluated at the current UTC instant.
   // Sunrise/sunset use a 90.833-degree zenith (solar radius and refraction).
@@ -65,8 +99,12 @@ Third-party materials retain their own licences.
   };
 
   const applyTheme = () => {
+    preference = readPreference();
+    if (preference && preference.expiresAt <= Date.now()) preference = null;
     const theme =
-      preference || daylightTheme(new Date()) || (systemPreference.matches ? 'dark' : 'light');
+      preference?.theme ||
+      daylightTheme(new Date()) ||
+      (systemPreference.matches ? 'dark' : 'light');
     root.dataset.theme = theme;
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', theme === 'dark' ? '#1b1522' : '#faf8fc');
@@ -90,7 +128,9 @@ Third-party materials retain their own licences.
     applyTheme();
     if (document.hidden) return;
     // Re-read the clock and time zone every 30 seconds, including across midnight.
-    timer = window.setTimeout(startUpdates, 30000 - (Date.now() % 30000));
+    const untilRefresh = 30000 - (Date.now() % 30000);
+    const untilExpiry = preference ? Math.max(1, preference.expiresAt - Date.now()) : Infinity;
+    timer = window.setTimeout(startUpdates, Math.min(untilRefresh, untilExpiry));
   };
 
   startUpdates();
@@ -98,14 +138,25 @@ Third-party materials retain their own licences.
   document.addEventListener('visibilitychange', startUpdates);
   window.addEventListener('pageshow', startUpdates);
   window.addEventListener('pagehide', stopUpdates);
+  window.addEventListener('storage', (event) => {
+    if (event.key === storageKey || event.key === null) startUpdates();
+  });
 
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.theme-toggle').forEach((button) => {
       button.hidden = false;
       button.addEventListener('click', () => {
-        preference = root.dataset.theme === 'dark' ? 'light' : 'dark';
-        // Manual switching lasts for this page; new pages return to daylight mode.
-        applyTheme();
+        preference = {
+          theme: root.dataset.theme === 'dark' ? 'light' : 'dark',
+          expiresAt: Date.now() + overrideDuration,
+        };
+        try {
+          window.localStorage.setItem(storageKey, JSON.stringify(preference));
+        } catch {
+          storageAvailable = false;
+        }
+        // A fresh click starts a new ten-minute window; loading a page does not.
+        startUpdates();
       });
     });
     applyTheme();
