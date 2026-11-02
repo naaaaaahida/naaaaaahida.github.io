@@ -1,0 +1,241 @@
+{
+  "scope": "Tracked website source, public assets, guidance and licence; generated graph, ignored/private planning files, caches and git internals excluded.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "a45f21f49ddfc26cfcc429a815985e290062342d573e03fcba1e77a1dc5a43a9"
+    },
+    {
+      "path": "404.html",
+      "sha256": "47f58a781ee66d8ac45479ebc30bd717083695054ba008b83c95034657ffe9b9"
+    },
+    {
+      "path": "AGENT.md",
+      "sha256": "f0ba8ea81f3a8e63cbd947bfb694c76982a0a542c7cefdeedc91a629cfa2b935"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+    },
+    {
+      "path": "README.md",
+      "sha256": "71316b554ff654012be7baf3251b009efb6e9f914b74a7719e4df40a9a5d1e4d"
+    },
+    {
+      "path": "assets/branding/apple-touch-icon.png",
+      "sha256": "28f8b882202af87dc60ed6d4f5a53f45bcf05257c0aaaa1c5e5ddbdc0deb337b"
+    },
+    {
+      "path": "assets/branding/favicon-32.png",
+      "sha256": "d58c00aa6d34df7756eedc1f044cd93a594ed0f876f579974b7aef0a63cc3762"
+    },
+    {
+      "path": "assets/branding/favicon.svg",
+      "sha256": "43a1b11b1f677aec63bf46cc7b81a52a4db8b380595f531e2556ab11be4236be"
+    },
+    {
+      "path": "assets/branding/social-preview.png",
+      "sha256": "1d3b67cdd346010a5892b511c163daedfa59fb54bc0c2bde5d2b33fe50e7221a"
+    },
+    {
+      "path": "assets/branding/social-preview.svg",
+      "sha256": "172ecf3701fe36cb4d5e2d1829809d9e112342e92b81f897160a4033506d6f5f"
+    },
+    {
+      "path": "assets/fonts/DM-Sans-OFL.txt",
+      "sha256": "2af94f4fb533be8fa23282eb33e08ca311ddf47c2f32777e2040b282deeec65c"
+    },
+    {
+      "path": "assets/fonts/Instrument-Serif-OFL.txt",
+      "sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521"
+    },
+    {
+      "path": "assets/fonts/dm-sans-400.woff2",
+      "sha256": "fad17f437a8990ebeac4192a04d0610fb5ffb5bf2ce29afaf139b999224b4146"
+    },
+    {
+      "path": "assets/fonts/dm-sans-500.woff2",
+      "sha256": "6cbfc62c695968cb79396f34590dd8bf06ea59c0b122152ad65ffd305eefa8b4"
+    },
+    {
+      "path": "assets/fonts/dm-sans-600.woff2",
+      "sha256": "c82d1f9d3f87dec33a9efdfb6926b7da8b1ba36c6cf8a691b857836e41a06429"
+    },
+    {
+      "path": "assets/fonts/instrument-serif-italic.woff2",
+      "sha256": "d59c6f29a86a72516c45b1d79e5b25c6ecc83d33b0060fb7a43e240ec9a9c4bb"
+    },
+    {
+      "path": "assets/fonts/instrument-serif-normal.woff2",
+      "sha256": "48fec33e162c513809d1f8d3952275cf2d4eeb5363e022fb668c7f63df846f06"
+    },
+    {
+      "path": "assets/icons/flag-fr.svg",
+      "sha256": "39235750491956ca11afc506192ae5c10366e484d4ffdc74e8732520b1ec9b45"
+    },
+    {
+      "path": "assets/icons/flag-gb.svg",
+      "sha256": "ec557bfa347017ed645008083b14e3473e9f4367df99433b2a1a27c562ee2efc"
+    },
+    {
+      "path": "assets/icons/flag-it.svg",
+      "sha256": "84d02712e5f691e0c3b0f663dd3c2694ea6833128a8dc3e999a250166795121e"
+    },
+    {
+      "path": "assets/icons/nahida-logo-1.png",
+      "sha256": "c7b77e36d5fa81f510ffac88609c8c967c116af46db469c4cde8ab1a8c2b59bf"
+    },
+    {
+      "path": "assets/icons/nahida-logo-2.png",
+      "sha256": "3086a41ce4518278d2e969cb3c574c117182da4b39c449f1875c59461d817cbb"
+    },
+    {
+      "path": "assets/images/bina-512.jpg",
+      "sha256": "76780f4bd6b44a14a8a7420bdac6e3ea4099f1c17d6a69c2955954aef4e22ee3"
+    },
+    {
+      "path": "assets/images/bina.jpg",
+      "sha256": "ce0c77058a649746b58acd3c67909e35953745e4de7eb7c50245f188b407855b"
+    },
+    {
+      "path": "assets/projects/churn-by-contract.png",
+      "sha256": "e3a71ced1efeacf5aeafd39b3270f117cd1f954938d96e985d767f4bcb0a6f9e"
+    },
+    {
+      "path": "assets/projects/churn-confusion-matrix.png",
+      "sha256": "0d86db0a4f73ed65a3cc5232ce9b3670c97c6f4eae7b2945b5191edb2883fc2c"
+    },
+    {
+      "path": "assets/projects/previews/bangla-rag-scene-dark.svg",
+      "sha256": "2ccc1441a3a31a47a2a21cf4b6aba6d1dec0c77515b37772dfd39ccd1c6e10d6"
+    },
+    {
+      "path": "assets/projects/previews/bangla-rag-scene.svg",
+      "sha256": "8068f026503514e53121d95f2b48ca1c7f4a69e36e16a183d8b14f51091b84bc"
+    },
+    {
+      "path": "assets/projects/previews/bangla-rag-social.png",
+      "sha256": "e5863427b9a22320b3c14e9a4f10ca28d282f6f3585da094ed1343fce722ad7a"
+    },
+    {
+      "path": "assets/projects/previews/bangla-rag-social.svg",
+      "sha256": "d725f334274e2914b29ce222cd7a9f5d82065ea91daae7056bf9422a1f721e92"
+    },
+    {
+      "path": "assets/projects/previews/coders-live-scene-dark.svg",
+      "sha256": "b703cfab5d92ff935964cbc847e9d0d0f14c9fd8a9274f07aa95476e15b39c74"
+    },
+    {
+      "path": "assets/projects/previews/coders-live-scene.svg",
+      "sha256": "b8d002b0ffe71a4ba05d9c45755d1ce45767329d40accdc6c96b9fe519879e67"
+    },
+    {
+      "path": "assets/projects/previews/coders-live-social.png",
+      "sha256": "bcffec3b5fc9b914602a3ed9549b756161eb080335178ef3df2a99d0d673e31e"
+    },
+    {
+      "path": "assets/projects/previews/coders-live-social.svg",
+      "sha256": "9f3ac703cf4e94ef65c885ca4d1592a0b9a9053c813a64accffb33dbf6a47d4c"
+    },
+    {
+      "path": "assets/projects/previews/crop-recommendation-scene-dark.svg",
+      "sha256": "5e30e487078d09bc2b9d1eaec4a539fefb63e26600b66156c41bb34331c01f5f"
+    },
+    {
+      "path": "assets/projects/previews/crop-recommendation-scene.svg",
+      "sha256": "8e8daa539bebfb6d99b99ba2680e1cc86d1d1ad95ea8b58bb40960ee0ef52560"
+    },
+    {
+      "path": "assets/projects/previews/crop-recommendation-social.png",
+      "sha256": "f2a16ebe1fb5052008762174ac9c7006b8b8179eea95b2133d791e7f756488f5"
+    },
+    {
+      "path": "assets/projects/previews/crop-recommendation-social.svg",
+      "sha256": "80d8c6bf7e8a0c21559900c9f042338b2dc798f53f9c36e0d531ecb4db33e522"
+    },
+    {
+      "path": "assets/projects/previews/customer-churn-scene-dark.svg",
+      "sha256": "65064b7cf69cde6e4f79706ea1353174de59d3ac609d60d1b4b3bc56a7a79399"
+    },
+    {
+      "path": "assets/projects/previews/customer-churn-scene.svg",
+      "sha256": "ff5531b815f5f409ed942a68116d4a3f173bd3861517916ce47e296cf31c289b"
+    },
+    {
+      "path": "assets/projects/previews/customer-churn-social.png",
+      "sha256": "b6b4ab7244f4bbf08bd8e66446c33a889f66bb35d7b8a0c19b019c7883c6ed9f"
+    },
+    {
+      "path": "assets/projects/previews/customer-churn-social.svg",
+      "sha256": "10f1cee253dd504ca91b22305754d8197a8f4467e757ccb4a16003fabd52dadd"
+    },
+    {
+      "path": "assets/projects/previews/whiteboard-scene-dark.svg",
+      "sha256": "629938be5cb174dd5a6238f9023a77c17a9c021081cbca295c5a2b1ebfc7b816"
+    },
+    {
+      "path": "assets/projects/previews/whiteboard-scene.svg",
+      "sha256": "57cca40a0a273ee379ea100e1c8be7fad59a9a435d50c6f8917576271f7f5ab1"
+    },
+    {
+      "path": "assets/projects/previews/whiteboard-social.png",
+      "sha256": "f559a13a1dc37095bf5647ba1ac65314a44c9edf329bbdd383b0047f35d14c2f"
+    },
+    {
+      "path": "assets/projects/previews/whiteboard-social.svg",
+      "sha256": "da15244edee8bc71f943858ee31c7004b3b1b471f0ece4eb5219254ee570aa5c"
+    },
+    {
+      "path": "index.html",
+      "sha256": "122383241a94401d981006497e35f005ba45c28a3054b1b441f83f507d025082"
+    },
+    {
+      "path": "projects/bangla-rag.html",
+      "sha256": "e5d37dc20f7f1964148de86627a63b093ed4e3f40823f6695fe557b18d4c4c6a"
+    },
+    {
+      "path": "projects/coders-live.html",
+      "sha256": "096197479ef4ae3f7b377db56b4012e1e965eb707014014ce81db92e57384486"
+    },
+    {
+      "path": "projects/crop-recommendation.html",
+      "sha256": "744cff539eb8dbba7682771a6eb69267c48b41f44c3e63f1e31c20134c627f54"
+    },
+    {
+      "path": "projects/customer-churn.html",
+      "sha256": "25828043131d06372a7177ba46b5436e678015e84f433d697f2a641ab4a5356d"
+    },
+    {
+      "path": "projects/whiteboard.html",
+      "sha256": "fba8209b86de73d1d069b3e855ff80ffe1ae590d2ab73c1ba164369bdbd6e07b"
+    },
+    {
+      "path": "src/scripts/effects.js",
+      "sha256": "56093fc293463dcccc73f7d6623b57d0a8ed1bddfb6af2bdf714e72cd10697a5"
+    },
+    {
+      "path": "src/scripts/i18n.js",
+      "sha256": "8a94e787c429972e907e69c11c9aae4ef82d79a40e749cc03b6623878b3c8cff"
+    },
+    {
+      "path": "src/scripts/main.js",
+      "sha256": "81abb74c1a75921c2ad7ad1a44786773c55521e2e00f66e500d83e768f2f33fc"
+    },
+    {
+      "path": "src/scripts/theme.js",
+      "sha256": "2ce24f4b7d54d38e131bbc55aae47ee7654ef654008de78c7e227344d0fdd02d"
+    },
+    {
+      "path": "src/scripts/translations.js",
+      "sha256": "6e32a1692e9595009551154882f1b81f1fdbede82471a71314fb90ae4ca8584d"
+    },
+    {
+      "path": "src/styles/fonts.css",
+      "sha256": "e87411744f1e45bababc699148d526c03c9c3ea536a71d870047a259d22266cc"
+    },
+    {
+      "path": "src/styles/main.css",
+      "sha256": "186a46dbad1b5873ef890c9ba76fa2bf0e77c65cf7593d14fa2f7754b7e90718"
+    }
+  ]
+}

@@ -21,3 +21,7 @@ tmp/
 .env
 .env.*
 !.env.example
+
+# Graphify machine-local state and extraction caches
+graphify-out/.*
+graphify-out/cache/
