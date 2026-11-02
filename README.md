@@ -2,7 +2,7 @@
 
 A personal portfolio for Nahida Zaman Bina, a software engineer with a frontend background and a current remote AI Engineer role at Unibox IT. The website showcases her projects, research, professional experience, and education in a lavender-accented design.
 
-The responsive layout features a name-led introduction, a portrait-first layout on smartphones, daylight-aware light and dark themes, a live Dhaka clock, a custom desktop cursor, and an interactive top scroll bar. Coders Live leads the project section in a wide feature, followed by four projects connecting her frontend and AI work to repository-backed case studies. Frontend projects include demo links, and the churn study includes figures saved in the actual project notebook. A rotated N monogram connects the theme-aware navigation and social images; the favicon uses a black N inside a white circle. A circular flag control offers British English, Italian, and French across the website, with a saved language preference.
+The responsive layout features a name-led introduction, a portrait-first layout on smartphones, browser-aware light and dark themes, a live Dhaka clock, a custom desktop cursor, and an interactive top scroll bar. Coders Live leads the project section in a wide feature, followed by four projects connecting her frontend and AI work to repository-backed case studies. Frontend projects include demo links, and the churn study includes figures saved in the actual project notebook. A rotated N monogram connects the theme-aware navigation and social images; the favicon uses a black N inside a white circle. A circular flag control offers British English, Italian, and French across the website, with a saved language preference.
 
 ## Links
 
@@ -15,7 +15,7 @@ The responsive layout features a name-led introduction, a portrait-first layout 
 
 - **HTML5** — semantic page structure and individual project pages.
 - **CSS3** — responsive Grid/Flexbox layouts, custom properties, themes, and animations.
-- **Vanilla JavaScript** — navigation, language preferences, daylight-aware theme controls, cursor effects, and scroll controls.
+- **Vanilla JavaScript** — navigation, language preferences, browser-aware theme controls, cursor effects, and scroll controls.
 - **Self-hosted fonts** — compact WOFF2 subsets of Instrument Serif and DM Sans, with system-font fallbacks; font licences are included in `assets/fonts/`.
 - **GitHub Pages** — static hosting, with no framework, dependencies, or build step required.
 
@@ -44,11 +44,9 @@ npx --yes prettier@3.6.2 --check .
 
 Formatting is optional development tooling; the website still runs directly without a build step.
 
-## Automatic daylight theme
+## Automatic theme
 
-The default theme is light between approximate sunrise and sunset at the representative city for the viewer’s browser time zone, and dark at night. Calculations run locally using bundled public-domain IANA time-zone coordinates and NOAA solar equations. No geolocation prompt, IP lookup, or external location request is used. This approximates a time-zone city, not the viewer’s exact position; weather, terrain, and atmospheric variations are not modelled.
-
-The theme refreshes every 30 seconds while visible and immediately when returning to the page. Manual choices take priority and are saved across pages and reloads for ten minutes from the latest toggle, then expire automatically. When storage is blocked, that temporary choice remains in memory for the current page. Unknown or unavailable time-zone coordinates fall back to the device’s light/dark preference. Polar day/night follows the calculated solar position.
+The website follows the browser’s light/dark preference (`prefers-color-scheme`) on load and whenever that preference changes. A manual choice takes priority for ten minutes from the latest toggle and is saved across pages and reloads. After expiry, the site automatically returns to the browser’s current preference. It checks expiry while visible and immediately on returning to the page. When storage is blocked, the ten-minute override works in memory for the current page. Theme selection uses no time-zone or location lookup.
 
 ## Branding assets
 
