@@ -38,12 +38,17 @@ Third-party materials retain their own licences.
       }
       if (
         saved &&
+        saved.version === 2 &&
+        saved.source === 'manual' &&
         (saved.theme === 'light' || saved.theme === 'dark') &&
+        Number.isFinite(saved.chosenAt) &&
+        saved.chosenAt <= Date.now() &&
+        saved.expiresAt - saved.chosenAt === overrideDuration &&
         Number.isFinite(saved.expiresAt) &&
         saved.expiresAt > Date.now() &&
         saved.expiresAt <= Date.now() + overrideDuration
       )
-        return { theme: saved.theme, expiresAt: saved.expiresAt };
+        return saved;
       window.localStorage.removeItem(storageKey);
     } catch {
       // Private browsing or blocked storage still permits an in-memory override.
@@ -100,9 +105,13 @@ Third-party materials retain their own licences.
     document.querySelectorAll('.theme-toggle').forEach((button) => {
       button.hidden = false;
       button.addEventListener('click', () => {
+        const chosenAt = Date.now();
         preference = {
+          version: 2,
+          source: 'manual',
+          chosenAt,
           theme: root.dataset.theme === 'dark' ? 'light' : 'dark',
-          expiresAt: Date.now() + overrideDuration,
+          expiresAt: chosenAt + overrideDuration,
         };
         try {
           window.localStorage.setItem(storageKey, JSON.stringify(preference));

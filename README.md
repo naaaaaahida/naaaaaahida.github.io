@@ -2,7 +2,7 @@
 
 A personal portfolio for Nahida Zaman Bina, a software engineer with a frontend background and a current remote AI Engineer role at Unibox IT. The website showcases her projects, research, professional experience, and education in a lavender-accented design.
 
-The responsive layout features a name-led introduction, a portrait-first layout on smartphones, browser-aware light and dark themes, a live Dhaka clock, a custom desktop cursor, and an interactive top scroll bar. Coders Live leads the project section in a wide feature, followed by four projects connecting her frontend and AI work to repository-backed case studies. Frontend projects include demo links, and the churn study includes figures saved in the actual project notebook. A rotated N monogram connects the theme-aware navigation and social images; the favicon uses a black N inside a white circle. A circular flag control offers British English, Italian, and French across the website, with a saved language preference.
+The responsive layout features a name-led introduction, a portrait-first layout on smartphones, browser-aware light and dark themes, a live Dhaka clock, a custom desktop cursor, and an interactive top scroll bar. Coders Live leads the project section in a wide feature, followed by four projects connecting her frontend and AI work to repository-backed case studies. Frontend projects include demo links, and the churn study includes figures saved in the actual project notebook. A rotated N monogram connects the theme-aware navigation and social images; the favicon uses a black N inside a white circle. A circular flag control offers British English, Italian, and French across the website, with a saved language preference and unchanged page URLs.
 
 ## Links
 
@@ -51,3 +51,7 @@ The website follows the browser’s light/dark preference (`prefers-color-scheme
 ## Branding assets
 
 `assets/icons/logo_black.png` and `logo_white.png` are the original Z artwork. The N monogram SVGs embed those originals rotated 90 degrees, and the editable favicon/social SVGs are retained alongside their required PNG exports. Tab titles use “Nahida Zaman Bina” across all pages and languages.
+
+## Regression checks
+
+Run `node --test tests/*.test.js` to verify theme defaults and expiry, language persistence without URL changes, and reversible translations despite formatting whitespace. No test dependencies are required.

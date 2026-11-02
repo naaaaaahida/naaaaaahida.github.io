@@ -16,7 +16,7 @@ Applies to the whole repository. This file is named `AGENT.md` as requested; too
 - Keep the footer credit consistent on every page: “Built with ♡ by my husband”, with husband linking to https://zunaaaaayed.github.io/ in a new tab with `noopener noreferrer`.
 - Keep Coders Live as the standout project. Do not invent achievements, employment dates, qualifications, metrics, or project outcomes.
 - British English is the source language; maintain Italian and French catalogue entries when changing translatable copy. Preserve proper names and original publication titles.
-- Preserve the mobile language menu, URL/stored language selection, and `portfolio:language` event integrations.
+- Preserve the mobile language menu, stored language selection without language query parameters, and `portfolio:language` event integrations.
 - Themes default to browser light/dark preference (`prefers-color-scheme`), including live changes, with no time-zone or location lookup. Manual choices take priority for ten minutes from the latest toggle, persist across pages/reloads when storage is available, and automatically expire back to the default.
 - The Dhaka clock uses `Asia/Dhaka`, no seconds: English `8:48 PM`, French `20h48`, Italian `20:48`.
 - Portrait download deterrents are limited browser behaviour; never claim a public image cannot be saved.

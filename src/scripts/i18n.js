@@ -24,26 +24,39 @@ Third-party materials retain their own licences.
   const names = { 'en-GB': 'English', it: 'Italiano', fr: 'Français' };
   const textKeys = new WeakMap();
   const attributeKeys = new WeakMap();
-  const linkTargets = new WeakMap();
+  const normaliseText = (value) => value.replace(/\s+/g, ' ').trim();
+  const sourceKeys = new Map();
   const reverse = new Map();
   Object.entries(catalogue).forEach(([key, values]) => {
+    sourceKeys.set(normaliseText(key), key);
     values.forEach((value) => {
-      if (!reverse.has(value)) reverse.set(value, key);
+      const normalised = normaliseText(value);
+      if (!reverse.has(normalised)) reverse.set(normalised, key);
     });
   });
   const normalise = (value) =>
     value === 'en' ? 'en-GB' : languages.includes(value) ? value : null;
   let language = 'en-GB';
   try {
-    language =
-      normalise(new URL(window.location.href).searchParams.get('lang')) ||
-      normalise(window.localStorage.getItem(storageKey)) ||
-      language;
+    language = normalise(window.localStorage.getItem(storageKey)) || language;
   } catch {
-    /* English remains usable when storage is unavailable. */
+    /* The selection still works in this page when storage is unavailable. */
+  }
+  // Clean up old language URLs without changing other query parameters or hashes.
+  try {
+    const url = new URL(window.location.href);
+    if (url.searchParams.has('lang')) {
+      url.searchParams.delete('lang');
+      window.history.replaceState(window.history.state, '', url);
+    }
+  } catch {
+    /* File previews can disallow history updates. */
   }
 
-  const keyFor = (value) => (Object.hasOwn(catalogue, value) ? value : reverse.get(value));
+  const keyFor = (value) => {
+    const normalised = normaliseText(value);
+    return sourceKeys.get(normalised) || reverse.get(normalised);
+  };
   const t = (key, values = {}) => {
     const translated =
       language === 'en-GB' ? key : catalogue[key]?.[language === 'it' ? 0 : 1] || key;
@@ -87,27 +100,12 @@ Third-party materials retain their own licences.
       });
   };
 
-  const translateLinks = () => {
-    document.querySelectorAll('a[href]').forEach((link) => {
-      const original = linkTargets.get(link) || link.getAttribute('href');
-      linkTargets.set(link, original);
-      if (!original || original.startsWith('#') || /^(https?:|mailto:|tel:)/i.test(original))
-        return;
-      const target = new URL(original, window.location.href);
-      if (!target.pathname.endsWith('.html') && !target.pathname.endsWith('/')) return;
-      if (language === 'en-GB') target.searchParams.delete('lang');
-      else target.searchParams.set('lang', language);
-      link.setAttribute('href', original.split(/[?#]/)[0] + target.search + target.hash);
-    });
-  };
-
   const applyLanguage = (next, save = false) => {
     const valid = normalise(next);
     if (!valid) return;
     language = valid;
     root.lang = language;
     translateDocument();
-    translateLinks();
     control?.querySelectorAll('[data-language]').forEach((button) => {
       const active = button.dataset.language === language;
       button.setAttribute('aria-pressed', String(active));
@@ -123,17 +121,10 @@ Third-party materials retain their own licences.
       try {
         window.localStorage.setItem(storageKey, language);
       } catch {
-        /* URL preserves the choice. */
-      }
-      try {
-        const url = new URL(window.location.href);
-        if (language === 'en-GB') url.searchParams.delete('lang');
-        else url.searchParams.set('lang', language);
-        window.history.replaceState(window.history.state, '', url);
-      } catch {
-        /* File previews can disallow history updates. */
+        /* The selection remains active for this page when storage is blocked. */
       }
     }
+
     document.dispatchEvent(new CustomEvent('portfolio:language', { detail: { language } }));
   };
 

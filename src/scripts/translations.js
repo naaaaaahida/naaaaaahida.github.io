@@ -41,7 +41,8 @@ window.portfolioTranslations = {
   ],
   'Explore my work': ['Scopri i miei progetti', 'Découvrir mes projets'],
   'Let’s talk': ['Parliamone', 'Échangeons'],
-  'Based in Dhaka': ['Vivo a Dhaka', 'Basée à Dhaka'],
+  'Based in Dhaka': ['Vivo a Dacca', 'Basée à Dacca'],
+  'Dhaka · UTC+6': ['Dacca · UTC+6', 'Dacca · UTC+6'],
   'Local time': ['Ora locale', 'Heure locale'],
   '01 / A LITTLE ABOUT ME': ['01 / QUALCOSA SU DI ME', '01 / QUELQUES MOTS SUR MOI'],
   'Equal parts': ['Un equilibrio tra', 'À parts égales,'],
@@ -186,7 +187,7 @@ window.portfolioTranslations = {
     ],
   'MAR 2024 — APR 2025': ['MAR 2024 — APR 2025', 'MARS 2024 — AVR. 2025'],
   'Senior Software Engineer': ['Ingegnera del software senior', 'Ingénieure logiciel senior'],
-  'Dhaka, Bangladesh · Onsite': ['Dhaka, Bangladesh · In sede', 'Dhaka, Bangladesh · Sur site'],
+  'Dhaka, Bangladesh · Onsite': ['Dacca, Bangladesh · In sede', 'Dacca, Bangladesh · Sur site'],
   'Led several software projects and engineering teams, guiding development, code quality, and delivery.':
     [
       'Ho guidato diversi progetti software e team tecnici, curando lo sviluppo, la qualità del codice e la consegna.',
@@ -207,7 +208,7 @@ window.portfolioTranslations = {
     'M.Sc. in Tecnologie dell’informazione e della comunicazione',
     'M.Sc. en technologies de l’information et de la communication',
   ],
-  'Dhaka, Bangladesh': ['Dhaka, Bangladesh', 'Dhaka, Bangladesh'],
+  'Dhaka, Bangladesh': ['Dacca, Bangladesh', 'Dacca, Bangladesh'],
   'FEB 2020 — JAN 2024': ['FEB 2020 — GEN 2024', 'FÉVR. 2020 — JANV. 2024'],
   'B.Sc. in Computer Science & Engineering': [
     'B.Sc. in Informatica e ingegneria informatica',
