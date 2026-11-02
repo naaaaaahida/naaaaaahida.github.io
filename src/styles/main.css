@@ -273,22 +273,19 @@ ul {
 .wordmark {
   position: relative;
   display: block;
-  flex: 0 0 112px;
-  width: 112px;
+  flex: 0 0 48px;
+  width: 48px;
   height: 48px;
   overflow: hidden;
 }
-/* Crop the supplied logos' transparent padding without modifying either PNG. */
+/* The supplied Z artwork is rotated 90 degrees inside the N SVG assets. */
 .wordmark img {
-  position: absolute;
-  top: 50%;
-  left: 0;
+  display: block;
   width: 100%;
-  height: auto;
-  max-width: none;
-  transform: translateY(-44%);
+  height: 100%;
+  object-fit: contain;
 }
-.wordmark-dark,
+.wordmark .wordmark-dark,
 [data-theme='dark'] .wordmark-light {
   display: none;
 }
@@ -1772,8 +1769,8 @@ ul {
     flex-wrap: wrap;
   }
   .wordmark {
-    flex-basis: 94px;
-    width: 94px;
+    flex-basis: 40px;
+    width: 40px;
     height: 40px;
   }
   .site-nav {
@@ -2316,8 +2313,8 @@ ul {
 }
 @media (max-width: 480px) {
   .wordmark {
-    flex-basis: 84px;
-    width: 84px;
+    flex-basis: 36px;
+    width: 36px;
     height: 36px;
   }
   .nav-wrap {

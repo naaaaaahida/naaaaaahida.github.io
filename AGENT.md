@@ -7,7 +7,7 @@ Applies to the whole repository. This file is named `AGENT.md` as requested; too
 - This is Nahida Zaman Bina’s static GitHub Pages portfolio. Use HTML, CSS, and vanilla JavaScript; preserve the build-free deployment and relative asset paths.
 - `index.html` is the homepage; `projects/` contains five case studies; `404.html` is the error page.
 - `src/styles/main.css` owns layout and themes; `fonts.css` loads self-hosted fonts.
-- `theme.js` runs before CSS; deferred `translations.js` precedes `i18n.js`, which precedes `main.js`. `effects.js` handles cursor and scroll effects.
+- `time-zone-locations.js` and then `theme.js` run before CSS; deferred `translations.js` precedes `i18n.js`, which precedes `main.js`. `effects.js` handles cursor and scroll effects.
 - `assets/` contains portraits, theme-aware logos, flags, project illustrations, social previews, and fonts. Preserve third-party licence files.
 
 ## Content and design
@@ -17,7 +17,7 @@ Applies to the whole repository. This file is named `AGENT.md` as requested; too
 - Keep Coders Live as the standout project. Do not invent achievements, employment dates, qualifications, metrics, or project outcomes.
 - British English is the source language; maintain Italian and French catalogue entries when changing translatable copy. Preserve proper names and original publication titles.
 - Preserve the mobile language menu, URL/stored language selection, and `portfolio:language` event integrations.
-- Themes follow device preference on each page load and device changes. Manual toggles affect the current page only.
+- Themes default to calculated daylight at the browser time-zone city, without geolocation or network lookup; unavailable coordinates fall back to device preference. Manual toggles affect the current page only.
 - The Dhaka clock uses `Asia/Dhaka`, no seconds: English `8:48 PM`, French `20h48`, Italian `20:48`.
 - Portrait download deterrents are limited browser behaviour; never claim a public image cannot be saved.
 

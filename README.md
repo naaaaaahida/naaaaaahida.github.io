@@ -2,7 +2,7 @@
 
 A personal portfolio for Nahida Zaman Bina, a software engineer with a frontend background and a current remote AI Engineer role at Unibox IT. The website showcases her projects, research, professional experience, and education in a lavender-accented design.
 
-The responsive layout features a name-led introduction, a portrait-first layout on smartphones, device-aware light and dark themes, a live Dhaka clock, a custom desktop cursor, and an interactive top scroll bar. Coders Live leads the project section in a wide feature, followed by four projects connecting her frontend and AI work to repository-backed case studies. Frontend projects include demo links, and the churn study includes figures saved in the actual project notebook. Theme-aware wordmarks connect the navigation, favicon, and social images. A circular flag control offers British English, Italian, and French across the website, with a saved language preference.
+The responsive layout features a name-led introduction, a portrait-first layout on smartphones, daylight-aware light and dark themes, a live Dhaka clock, a custom desktop cursor, and an interactive top scroll bar. Coders Live leads the project section in a wide feature, followed by four projects connecting her frontend and AI work to repository-backed case studies. Frontend projects include demo links, and the churn study includes figures saved in the actual project notebook. A rotated N monogram connects the theme-aware navigation and social images; the favicon uses a black N inside a white circle. A circular flag control offers British English, Italian, and French across the website, with a saved language preference.
 
 ## Links
 
@@ -15,7 +15,7 @@ The responsive layout features a name-led introduction, a portrait-first layout 
 
 - **HTML5** — semantic page structure and individual project pages.
 - **CSS3** — responsive Grid/Flexbox layouts, custom properties, themes, and animations.
-- **Vanilla JavaScript** — navigation, language preferences, device-aware theme controls, cursor effects, and scroll controls.
+- **Vanilla JavaScript** — navigation, language preferences, daylight-aware theme controls, cursor effects, and scroll controls.
 - **Self-hosted fonts** — compact WOFF2 subsets of Instrument Serif and DM Sans, with system-font fallbacks; font licences are included in `assets/fonts/`.
 - **GitHub Pages** — static hosting, with no framework, dependencies, or build step required.
 
@@ -43,3 +43,13 @@ npx --yes prettier@3.6.2 --check .
 ```
 
 Formatting is optional development tooling; the website still runs directly without a build step.
+
+## Automatic daylight theme
+
+The default theme is light between approximate sunrise and sunset at the representative city for the viewer’s browser time zone, and dark at night. Calculations run locally using bundled public-domain IANA time-zone coordinates and NOAA solar equations. No geolocation prompt, IP lookup, or external location request is used. This approximates a time-zone city, not the viewer’s exact position; weather, terrain, and atmospheric variations are not modelled.
+
+The theme refreshes every 30 seconds while visible and immediately when returning to the page. Manual switching lasts for the current page. Unknown or unavailable time-zone coordinates fall back to the device’s light/dark preference. Polar day/night follows the calculated solar position.
+
+## Branding assets
+
+`assets/icons/logo_black.png` and `logo_white.png` are the original Z artwork. The N monogram SVGs embed those originals rotated 90 degrees, and the editable favicon/social SVGs are retained alongside their required PNG exports. Tab titles use “Nahida Zaman Bina” across all pages and languages.
